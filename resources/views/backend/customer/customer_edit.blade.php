@@ -62,9 +62,7 @@
                                             <div class="col-sm-9">
                                                 <select id="cid" name="company" value="{{ $customer->company }}" class="form-control select2-hidden-accessible" data-select2-id="cid" tabindex="-1" aria-hidden="true">
                                                     <option value="0" data-select2-id="2">None</option>
-                                                                                                            <option value="8">
-                                                            Kloud Technologies
-                                                        </option>
+                                                   <option value="8">Kloud Technologies</option>
                                                                                                             <option value="7">
                                                             AmarStationery
                                                         </option>

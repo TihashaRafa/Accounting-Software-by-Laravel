@@ -9,7 +9,7 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                    <h4 class="card-title">Add Product </h4>
+                                    <h4 class="card-title">Add Purchase </h4>
 
 
                                         <form method ="post" action= "{{ route('product.store') }}" id="myForm" enctype="multipart/form-data">
@@ -19,7 +19,7 @@
                                     <div class="row mb-3"> 
                                          <label for="example-text-input" class="col-sm-2 col-from-label">Product Name</label>
                                         <div class="col-sm-10">
-                                            <input type="text" name="name" class="from-control" value="{{ $product->name }}" id="example-text-input">
+                                            <input type="text" name="name" class="from-control" value=""  id="example-text-input">
                                         </div>
                                     </div>
 

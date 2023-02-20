@@ -7,8 +7,9 @@ use App\Models\Product;
 use App\Models\Supplier;
 use App\Models\Company;
 use App\Models\Customer;
+
 use Auth;
-use Illuminate\Support\Carbon;
+use Illuminate\Support\Carbon; 
 
 class ProductController extends Controller
 {

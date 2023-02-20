@@ -20,4 +20,14 @@ class DefaultController extends Controller
         $allcustomer = Product::with(['customer'])->select('customer_id')->where('supplier_id',$supplier_id)->groupBy('customer_id')->get();
         return response()->json($allcustomer);
     } // End Mehtod 
+
+
+
+    public function GetCompany(Request $request){
+
+        $company_id = $request->company_id;
+        // dd($supplier_id);bn 
+        $allcompany = Product::select('company_id')->where('company_id',$company_id)->get();
+        return response()->json($allcompany);
+    } // End Mehtod 
 }

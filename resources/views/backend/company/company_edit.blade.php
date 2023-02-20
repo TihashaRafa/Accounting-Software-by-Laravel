@@ -104,6 +104,7 @@
                             <div class="mb-3"><label for="logo_url">Logo URL</label>
 
                                 <div><input type="file" id="logo_url" name="logo" class="form-control" value="">
+								<img class="card-img-top img-fluid" src="{{ (!empty($company->logo))? url('upload/logo/'.$company->logo):url('upload/no_image.jpg') }}" alt="Card image cap">
 
                                 </div>
 

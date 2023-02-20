@@ -5,10 +5,12 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Pos\SupplierController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\DepositeController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\DefaultController;
+use App\Http\Controllers\InvoiceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -72,6 +74,29 @@ Route::controller(CompanyController::class)->group(function(){
     Route::get('/company/show/{id}', 'CompanyShow')->name('company.show');
     
 });
+
+// Deposite All 
+Route::controller(DepositeController::class)->group(function(){
+    Route::get('/deposite/all', 'DepositeAll')->name('deposite.all');
+    Route::post('/deposite/store', 'DpositeStore')->name('deposite.store');
+    Route::get('/deposite/show{id}', 'DpositeShow')->name('deposite.show');
+   
+    
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Group All
 Route::controller(GroupController::class)->group(function(){
     Route::get('/group/all', 'GroupAll')->name('group.all');
@@ -96,17 +121,23 @@ Route::controller(ProductController::class)->group(function(){
 // purchase All 
 Route::controller(PurchaseController::class)->group(function(){
     Route::get('/purchase/all', 'PurchaseAll')->name('purchase.all');
-    // Route::get('/product/add', 'ProductAdd')->name('product.add');
     Route::get('/purchase/add', 'PurchaseAdd')->name('purchase.add');
+
+});
+
+// Invoice All 
+Route::controller(InvoiceController::class)->group(function(){
+    Route::get('/invoice/all', 'InvoiceAll')->name('invoice.all');
 
 });
 
 // Default All 
 Route::controller(DefaultController::class)->group(function(){
     Route::get('/get-customer', 'GetCustomer')->name('get-customer');
+    Route::get('/get-company', 'GetCompany')->name('get-company');
     
 
-});
+}); 
 
 
 Route::middleware('auth')->group(function () {

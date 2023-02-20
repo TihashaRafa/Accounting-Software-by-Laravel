@@ -31,9 +31,7 @@
 
 
                     <div class="row">
-                        <div class="col-md-6">
-
-
+                        <div class="col-md-12">
 
                             <div class="mb-3">
                                 <label for="company_name">Company Name<small class="red">*</small></label>
@@ -42,9 +40,7 @@
 
                                 </div>
 
-
                             </div>
-
 
                             <div class="mb-3">
                                 <label for="code">Code<small class="red">*</small></label>
@@ -53,10 +49,7 @@
 
                                 </div>
 
-
                             </div>
-
-                            
 
                                 <div class="mb-3">
                                     <label for="business_number">Business Number</label>
@@ -68,18 +61,12 @@
 
                                 </div>
 
-
-                            
-
                             <div class="mb-3"><label for="url">URL</label>
 
                                 <div><input type="text" id="url" name="url" class="form-control" value="http://">
 
                                 </div>
-
-
                             </div>
-
 
                             <div class="mb-3"><label for="email">Email</label>
                                 <div>
@@ -87,23 +74,20 @@
                                 </div>
 
                             </div>
-
-
                             <div class="mb-3"><label for="phone">Phone</label>
 
                                 <div><input type="text" id="phone" name="phone" class="form-control" value="">
 
                                 </div>
-
                             </div>
 
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-3">
 
                             <div class="mb-3"><label for="logo_url">Logo URL</label>
 
-                                <div><input type="file" id="logo_url" name="logo" class="form-control" value="">
+                                <div><input type="file" id="logo" name="logo" class="form-control" value="">
 
                                 </div>
 

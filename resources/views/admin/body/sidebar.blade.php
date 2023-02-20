@@ -51,6 +51,7 @@
                     <li><a href="{{ route('group.all') }}">Groups</a></li>
                     <li><a href="email-inbox.html">Files</a></li>
                     <li><a href="{{ route('product.all') }}">Products</a></li>
+                    <li><a href="{{ route('invoice.all') }}">Invoice</a></li>
                 </ul>
              </li>
                     <!-- Customer end here -->
@@ -65,7 +66,7 @@
                 </a>
              
                 <ul class="sub-menu" aria-expanded="false">
-                    <li><a href="#">New Deposite</a></li>
+                    <li><a href="{{ route('deposite.all') }}">New Deposite</a></li>
                     <li><a href="#">New Expance</a></li>
                     <li><a href="#">Transfer</a></li>
                     <li><a href="#">Bills</a></li>

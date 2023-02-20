@@ -94,6 +94,8 @@
 
         <!-- App js -->
         <script src="{{ asset('backend/assets/js/app.js') }}"></script>
+        <script src="{{ asset('backend/assets/js/handlebar.js') }}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/js/bootstrap-notify.min.js"><script>
     </body>
 
 </html>

@@ -4,6 +4,9 @@
 
 
 
+<div class="page-content">
+
+                    <div class="container-fluid">
 
 
 
@@ -19,10 +22,10 @@
 
 
 
-            <strong class="h1">Full Name: {{ $customer->name }}  </strong> <br>
-             <strong class="h1">Company Name: {{ $customer->company }} </strong>   <br>
+            <strong class="h5">Full Name: {{ $customer->name }}  </strong> <br>
+             <strong class="h5">Company Name: {{ $customer->company }} </strong>   <br>
             
-            <strong class="h1">Email: </strong>   <br>
+            <strong class="h5">Email: </strong>   <br>
 
             
             <strong class="h5">Phone:{{ $customer->phone }} </strong>    <br>
@@ -125,6 +128,8 @@
         </tr>
         </tbody>
     </table>
+</div>
+</div>
 </div>
 
 

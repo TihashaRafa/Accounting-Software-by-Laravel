@@ -6,11 +6,9 @@
 <div class="row">
                             <div class="col-lg-4">
                                 <div class="card">
-                                   <!-- <center>
-                                   <img class="card-img-top img-fluid" src="{{ (!empty($adminData->Image))? url('upload/admin_images/'.$adminData->Image):url('upload/no_image.jpg') }}" alt="Card image cap">
-
-                                   </center> -->
+                                 
                                     <div class="card-body">
+                                    <img class="card-img-top img-fluid" src="{{ (!empty($company->logo))? url('upload/logo/'.$company->logo):url('upload/no_image.jpg') }}" alt="Card image cap">
                                         <h4 class="card-title">Company Name : {{  $company->name }}</h4>
                                         <hr>
                                         <h4 class="card-title">URL : {{  $company-> url }}</h4>
