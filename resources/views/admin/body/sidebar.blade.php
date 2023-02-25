@@ -74,7 +74,7 @@
                     <li><a href="{{ route('transaction.unclear') }}">Unclear Transactions</a></li>
                     <li><a href="{{ route('account.all') }}">Accounts</a></li>
                     <li><a href="{{ route('account.add') }}">New Accounts</a></li>
-                    <li><a href="#">Assets</a></li>
+                    <li><a href="{{ route('asset.add') }}">Assets</a></li>
                     
                 </ul>
              </li>

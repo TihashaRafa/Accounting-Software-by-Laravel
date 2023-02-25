@@ -11,6 +11,7 @@ use App\Http\Controllers\TransferController;
 use App\Http\Controllers\BillController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\AssetController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PurchaseController;
@@ -132,6 +133,16 @@ Route::controller(AccountController::class)->group(function(){
     Route::post('/account/update', 'AccountUpdate')->name('account.update');
     Route::get('/account/delete/{id}', 'AccountDelete')->name('account.delete');
     Route::get('/account/record', 'AccountRecord')->name('account.record');
+
+});
+
+
+// Asset All 
+Route::controller(AssetController::class)->group(function(){
+    Route::get('/asset/add', 'AssetAdd')->name('asset.add');
+    Route::get('/asset/all', 'AssetAll')->name('asset.all');
+    Route::post('/asset/store', 'AssetStore')->name('asset.store');
+   
 
 });
 
