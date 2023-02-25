@@ -6,6 +6,11 @@ use App\Http\Controllers\Pos\SupplierController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\DepositeController;
+use App\Http\Controllers\ExpanceController;
+use App\Http\Controllers\TransferController;
+use App\Http\Controllers\BillController;
+use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PurchaseController;
@@ -85,15 +90,50 @@ Route::controller(DepositeController::class)->group(function(){
 });
 
 
+// Expance All 
+Route::controller(ExpanceController::class)->group(function(){
+    Route::get('/expance/all', 'ExpanceAll')->name('expance.all');
+    Route::post('/expance/store', 'ExpanceStore')->name('expance.store');
+    Route::get('/expance/show{id}', 'ExpanceShow')->name('expance.show');
+});
+
+// Transfer All 
+Route::controller(TransferController::class)->group(function(){
+    Route::get('/transfer/all', 'TransferAll')->name('transfer.all');
+    Route::post('/transfer/store', 'TransferStore')->name('transfer.store');
+    Route::get('/transfer/show{id}', 'TransferShow')->name('transfer.show');
+});
+
+// Bill All 
+Route::controller(BillController::class)->group(function(){
+    Route::get('/bill/all', 'BillAll')->name('bill.all');
+    Route::get('/bill/add', 'BillAdd')->name('bill.add');
+    Route::get('/bill/summery', 'SummeryAdd')->name('summery.add');
+    Route::post('/bill/store', 'BillStore')->name('bill.store');
+    Route::get('/bill/show{id}', 'BillShow')->name('bill.show');
+    
+});
+
+// Transaction All 
+Route::controller(TransactionController::class)->group(function(){
+    Route::get('/transaction/all', 'TransactionAll')->name('transaction.all');
+    Route::post('/transaction/store', 'TransactionStore')->name('transaction.store');
+    Route::get('/transaction/show{id}', 'TransactionShow')->name('transaction.show');
+    Route::get('/transaction/unclear', 'TransactionUnclear')->name('transaction.unclear');
+});
 
 
+// Account All 
+Route::controller(AccountController::class)->group(function(){
+    Route::get('/account/add', 'AccountAdd')->name('account.add');
+    Route::get('/account/all', 'AccountAll')->name('account.all');
+    Route::post('/account/store', 'AccountStore')->name('account.store');
+    Route::get('/account/edit/{id}', 'AccountEdit')->name('account.edit');
+    Route::post('/account/update', 'AccountUpdate')->name('account.update');
+    Route::get('/account/delete/{id}', 'AccountDelete')->name('account.delete');
+    Route::get('/account/record', 'AccountRecord')->name('account.record');
 
-
-
-
-
-
-
+});
 
 
 

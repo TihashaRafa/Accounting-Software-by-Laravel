@@ -9,7 +9,7 @@
         <div class="col-lg-3 col-md-6 col-sm-12">
             <div class="panel">
                 <div class="panel-hdr">
-                    <h2>Add Deposit</h2>
+                    <h2>Add Expance</h2>
 
                 </div>
                 <div class="panel-container" id="ibox_form">
@@ -20,7 +20,7 @@
                             <span id="emsgbody"></span>
                         </div>
 
-                        <form method ="post" action= "{{ route('deposite.store') }}" id="myForm" enctype="multipart/form-data">
+                        <form method ="post" action= "{{ route('expance.store') }}" id="myForm" enctype="multipart/form-data">
                                             @csrf 
 
                          <div class="row mb-3">
@@ -109,8 +109,8 @@
                                     </div>
 
                                     <div class="row mb-3"> 
-                                         <label for="example-text-input" class="col-sm-2 col-from-label">Payer</label>
-                                    <select id="payer" name="payer" class="form-control select2-hidden-accessible">
+                                         <label for="example-text-input" class="col-sm-2 col-from-label">Payee</label>
+                                    <select id="payee" name="payee" class="form-control select2-hidden-accessible">
                                         <option>Choose Contact</option>
                                         <option>Junaid Miaje</option>
                                         <option>Mostaim Billah Murad</option>
@@ -157,8 +157,13 @@
                                      <input type="text" name="status" class="form-control select2-hidden-accessible" value="" >
                             </div>
 
+                            <div class="row mb-3">
+                                <label for="example-text-input" class="col-sm-2 col-from-label">Ref#</label>    
+                                     <input type="text" name="ref" class="form-control select2-hidden-accessible" value="" >
+                            </div>
+
                                 
-                                    <input type="submit" class="btn btn-rounded btn-info waves-effect waves-light" value="Add Deposite">
+             <input type="submit" class="btn btn-rounded btn-info waves-effect waves-light" value="Add Expance">
                         </form>
 
                     </div>
@@ -178,7 +183,7 @@
             <div class="col-lg-8 col-md-6 col-sm-12">
                 <div class="panel">
                     <div class="panel-hdr">
-                        <h2>Recent Deposits</h2>
+                        <h2>Recent Expance</h2>
 
                     </div>
 
@@ -195,15 +200,16 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($deposite as $key =>$items)
+                                @foreach($expance as $key =>$items)
 
                                     <tr>
 
                                         <td class="h6">{{ $items->account }} </td>
                                         <td class="h6 text-info"><a href="https://portal.optimus.com.bd/?ng=transactions/manage/83/">
                                            <span class="text-info"> {{ $items->description }} </span></a>  <br>
+                                           <span class="text-info"> {{ $items->code }} </span></a>  <br>
                                            <span class="text-info"> {{ $items->company }} </span></a>  <br>
-                                           {{ $items->code }} 
+                                        
                                          <br>
                                       
                                         </td>

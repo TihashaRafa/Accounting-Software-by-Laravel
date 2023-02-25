@@ -67,16 +67,34 @@
              
                 <ul class="sub-menu" aria-expanded="false">
                     <li><a href="{{ route('deposite.all') }}">New Deposite</a></li>
-                    <li><a href="#">New Expance</a></li>
-                    <li><a href="#">Transfer</a></li>
-                    <li><a href="#">Bills</a></li>
-                    <li><a href="#">View Transactions</a></li>
-                    <li><a href="#">Accounts</a></li>
+                    <li><a href="{{ route('expance.all') }}">New Expance</a></li>
+                    <li><a href="{{ route('transfer.all') }}">Transfer</a></li>
+                    <li><a href="{{ route('bill.all') }}">Bills</a></li>
+                    <li><a href="{{ route('transaction.all') }}">View Transactions</a></li>
+                    <li><a href="{{ route('transaction.unclear') }}">Unclear Transactions</a></li>
+                    <li><a href="{{ route('account.all') }}">Accounts</a></li>
+                    <li><a href="{{ route('account.add') }}">New Accounts</a></li>
                     <li><a href="#">Assets</a></li>
                     
                 </ul>
              </li>
   <!-- Accounting ends here -->
+
+
+    <!-- Supplier start here -->
+
+            <li>
+                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                    <i class="ri-layout-3-line"></i>
+                    <span>Supplier</span>
+                </a>
+             
+                <ul class="sub-menu" aria-expanded="false">
+                    <li><a href="{{ route('supplier.all') }}">All Supplier</a></li>
+                    <li><a href="{{ route('supplier.add') }}">New Supplier</a></li>
+                </ul>
+             </li>
+  <!-- Supplier ends here -->
 
 
    <!-- Purchase start here -->
@@ -98,9 +116,6 @@
 
 
 
-             <li class="menu-title">Activities</li>
-
-             <li>
                 <a href="#" class="waves-effect">
                     <i class="ri-dashboard-line"></i><span class="badge rounded-pill bg-success float-end"></span>
                     <span>Expance</span>
@@ -160,20 +175,10 @@
         </a>
     <li>
 
-    <li>
-        <a href="{{ route('supplier.all') }}" class="has-arrow waves-effect">
-             <i class="ri-layout-3-line"></i>
-             <span>Suppliers</span>
-             
-        </a>
-    <li>
-
     
    </ul>
 </li>
-
-      
-        
+   
 
 <li class="menu-title">People</li>
 <li>
@@ -181,10 +186,6 @@
        <i class="ri-layout-3-line"></i>
        <span>Clients</span>
    </a>
-
-
-
-   
 
   <li class="menu-title">Inventory</li>
 <li>
