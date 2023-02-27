@@ -15,9 +15,6 @@
             <a href="{{ route('employee.add') }}" class="btn btn-primary waves-effect waves-themed">Add an employee</a>
         </div>
 
-       
-
-
     </div>
     <br>
     <br>
@@ -32,8 +29,7 @@
         <div class="text-center" href="#">
 
             <img alt="image" class="rounded-circle m-t-xs img-fluid avatar-xl mb-4" src="">
-            
-       
+        
             <h3></h3>
             <div class="m-t-xs text-muted">
                 Customer Success Manager
@@ -59,9 +55,8 @@
          
 
             <div>
-                <a href="{{ route('employee.add') }}" class="btn btn-warning waves-effect waves-themed">View</a>
+                <a href="" class="btn btn-warning waves-effect waves-themed">View</a>
             </div>
-
 
         </div>
 

@@ -167,6 +167,25 @@
              
              </li>
   <!-- Calender end here -->
+
+  <!-- HRM start here -->
+
+  <li>
+                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                    <i class="ri-layout-3-line"></i>
+                    <span>Products $ Services</span>
+                </a>
+             
+                <ul class="sub-menu" aria-expanded="false">
+                    <li><a href="{{ route('pproduct.all') }}">Products</a></li>
+                    <li><a href="{{ route('pproduct.add') }}">New Products</a></li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">New Services</a></li>
+                   
+                    
+                </ul>
+             </li>
+  <!-- HRM ends here -->
   
   <!-- Account start here -->
 

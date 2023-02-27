@@ -18,7 +18,7 @@
                 <div class="panel-hdr">
                     <h2><span></span>Add Contact</h2>
                     <div class="panel-toolbar">
-                        <a href="https://portal.optimus.com.bd/?ng=contacts/import_csv/" class="btn btn-primary waves-effect waves-themed"><i class="fal fa-upload"></i> Import Contacts</a>
+                        <a href="#" class="btn btn-primary waves-effect waves-themed"><i class="fal fa-upload"></i> Import Contacts</a>
                     </div>
 
                 </div>

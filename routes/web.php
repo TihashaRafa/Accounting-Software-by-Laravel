@@ -16,6 +16,7 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\HRMEmployeeController;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\PayrollController;
+use App\Http\Controllers\PproductController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PurchaseController;
@@ -158,8 +159,7 @@ Route::controller(HRMEmployeeController::class)->group(function(){
     Route::get('/employee/add', 'EmployeeAdd')->name('employee.add');
     Route::get('/employee/all', 'EmployeeAll')->name('employee.all');
     Route::post('/employee/store', 'EmployeeStore')->name('employee.store');
-    Route::get('/employee/edit/{id}', 'EmployeeEdit')->name('employee.edit');
-    Route::post('/employee/update', 'EmployeeUpdate')->name('employee.update');
+  
 });
 
 // Attandance All 
@@ -175,6 +175,20 @@ Route::controller(PayrollController::class)->group(function(){
     Route::get('/payroll/add', 'PayrollAdd')->name('payroll.add');
 
 });
+
+// PProducts All 
+Route::controller(PproductController::class)->group(function(){
+    Route::get('/pproduct/add', 'ProductAdd')->name('pproduct.add');
+    Route::get('/pproduct/all', 'ProductAll')->name('pproduct.all');
+    Route::post('/pproduct/store', 'pproductStore')->name('pproduct.store');
+    Route::get('/pproduct/edit/{id}', 'PproductEdit')->name('pproduct.edit');
+    Route::post('/pproduct/update', 'pproductUpdate')->name('pproduct.update');
+    Route::get('/pproduct/delete/{id}', 'PproductDelete')->name('pproduct.delete');
+   
+
+});
+
+
 
 
 // Group All

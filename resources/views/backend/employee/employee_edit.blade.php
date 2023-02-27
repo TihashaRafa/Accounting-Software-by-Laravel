@@ -19,7 +19,7 @@
                      <div class="panel-content">
                         
 
-                         <form method ="post" action= "{{ route('employee.update') }}" id="myForm" enctype="multipart/form-data">
+                         <form method ="post" action= "#" id="myForm" enctype="multipart/form-data">
                                             @csrf 
 
                                 <input type="hidden" name="id" value="{{ $employee->id }}" >
