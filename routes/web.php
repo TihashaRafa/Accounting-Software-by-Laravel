@@ -12,6 +12,10 @@ use App\Http\Controllers\BillController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AssetController;
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\HRMEmployeeController;
+use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\PayrollController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PurchaseController;
@@ -142,10 +146,35 @@ Route::controller(AssetController::class)->group(function(){
     Route::get('/asset/add', 'AssetAdd')->name('asset.add');
     Route::get('/asset/all', 'AssetAll')->name('asset.all');
     Route::post('/asset/store', 'AssetStore')->name('asset.store');
+    Route::get('/asset/edit/{id}', 'AssetEdit')->name('asset.edit');
+    Route::post('/asset/update', 'AssetUpdate')->name('asset.update');
+    Route::get('/asset/delete/{id}', 'AssetDelete')->name('asset.delete');
    
 
 });
 
+// all employee 
+Route::controller(HRMEmployeeController::class)->group(function(){
+    Route::get('/employee/add', 'EmployeeAdd')->name('employee.add');
+    Route::get('/employee/all', 'EmployeeAll')->name('employee.all');
+    Route::post('/employee/store', 'EmployeeStore')->name('employee.store');
+    Route::get('/employee/edit/{id}', 'EmployeeEdit')->name('employee.edit');
+    Route::post('/employee/update', 'EmployeeUpdate')->name('employee.update');
+});
+
+// Attandance All 
+Route::controller(AttendanceController::class)->group(function(){
+    Route::get('/attandance/all', 'AttandanceAll')->name('attandance.all');
+
+});
+
+
+// Payroll All 
+Route::controller(PayrollController::class)->group(function(){
+    Route::get('/payroll/all', 'PayrollAll')->name('payroll.all');
+    Route::get('/payroll/add', 'PayrollAdd')->name('payroll.add');
+
+});
 
 
 // Group All

@@ -49,9 +49,8 @@
                     <li><a href="{{ route('customer.all') }}">List Customers</a></li>
                     <li><a href="{{ route('company.all') }}">Companies</a></li>
                     <li><a href="{{ route('group.all') }}">Groups</a></li>
-                    <li><a href="email-inbox.html">Files</a></li>
-                    <li><a href="{{ route('product.all') }}">Products</a></li>
-                    <li><a href="{{ route('invoice.all') }}">Invoice</a></li>
+                   
+                   
                 </ul>
              </li>
                     <!-- Customer end here -->
@@ -74,11 +73,33 @@
                     <li><a href="{{ route('transaction.unclear') }}">Unclear Transactions</a></li>
                     <li><a href="{{ route('account.all') }}">Accounts</a></li>
                     <li><a href="{{ route('account.add') }}">New Accounts</a></li>
-                    <li><a href="{{ route('asset.add') }}">Assets</a></li>
+                    <li><a href="{{ route('asset.all') }}">Assets</a></li>
                     
                 </ul>
              </li>
   <!-- Accounting ends here -->
+
+
+     <!-- Sales start here -->
+
+     <li>
+                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                    <i class="ri-layout-3-line"></i>
+                    <span>Sales</span>
+                </a>
+             
+                <ul class="sub-menu" aria-expanded="false">
+                    <li><a href="#">Invoice</a></li>
+                    <li><a href="#">New Invoice</a></li>
+                    <li><a href="#">POS</a></li>
+                    <li><a href="#">Recurring Invoice</a></li>
+                    <li><a href="#">New Recurring Invoice</a></li>
+                    <li><a href="#">Quotes</a></li>
+                    <li><a href="#">create New Quotes</a></li>
+                    <li><a href="#">Payments</a></li>   
+                </ul>
+             </li>
+  <!-- Sales ends here -->
 
 
     <!-- Supplier start here -->
@@ -96,6 +117,9 @@
              </li>
   <!-- Supplier ends here -->
 
+
+
+  
 
    <!-- Purchase start here -->
 
@@ -115,93 +139,37 @@
   <!-- Purchase ends here -->
 
 
+  <!-- HRM start here -->
 
-                <a href="#" class="waves-effect">
-                    <i class="ri-dashboard-line"></i><span class="badge rounded-pill bg-success float-end"></span>
-                    <span>Expance</span>
+            <li>
+                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                    <i class="ri-layout-3-line"></i>
+                    <span>HRM</span>
+                </a>
+             
+                <ul class="sub-menu" aria-expanded="false">
+                    <li><a href="{{ route('employee.all') }}">Employees</a></li>
+                    <li><a href="{{ route('attandance.all') }}">Attandance</a></li>
+                    <li><a href="{{ route('payroll.add') }}">Payroll</a></li>
+                  
                     
-                </a>
-             </li>
-
-             <li>
-                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                    <i class="ri-layout-3-line"></i>
-                    <span>Purchases</span>
-                </a>
-             
-                <ul class="sub-menu" aria-expanded="false">
-                    <li><a href="email-inbox.html">Purchase List</a></li>
                 </ul>
              </li>
+  <!-- HRM ends here -->
 
-             <li>
-                <a href="javascript: void(0);" class="has-arrow waves-effect">
+  <!-- Calender start here -->
+  
+  <li>
+                <a href="javascript: void(0);" class="">
                     <i class="ri-layout-3-line"></i>
-                    <span>Sales</span>
+                    <span>Calender</span>
                 </a>
              
-                <ul class="sub-menu" aria-expanded="false">
-                    <li><a href="email-inbox.html">Invoice List</a></li>
-                    <li><a href="email-inbox.html">POS</a></li>
-                </ul>
              </li>
+  <!-- Calender end here -->
+  
+  <!-- Account start here -->
 
-
-  <li class="menu-title">Accounting</li>
-<li>
-   <a href="javascript: void(0);" class="has-arrow waves-effect">
-       <i class="ri-layout-3-line"></i>
-       <span>Cash Book</span>
-   </a>
-
-   <ul class="sub-menu" aria-expanded="false">
-       <li><a href="email-inbox.html">Balance Transfer</a></li>
-   </ul>
-</li>
-
-<li>
-   <a href="javascript: void(0);" class="has-arrow waves-effect">
-       <i class="ri-layout-3-line"></i>
-       <span>Payments</span>
-   </a>
-   <ul class="sub-menu" aria-expanded="false">
-      
-   
-    <li>
-        <a href="javascript: void(0);" class="has-arrow waves-effect">
-             <i class="ri-layout-3-line"></i>
-             <span>Clients</span>
-             
-        </a>
-    <li>
-
-    
-   </ul>
-</li>
-   
-
-<li class="menu-title">People</li>
-<li>
-   <a href="javascript: void(0);" class="has-arrow waves-effect">
-       <i class="ri-layout-3-line"></i>
-       <span>Clients</span>
-   </a>
-
-  <li class="menu-title">Inventory</li>
-<li>
-   <a href="javascript: void(0);" class="has-arrow waves-effect">
-       <i class="ri-layout-3-line"></i>
-       <span>Products</span>
-   </a>
-
-   <ul class="sub-menu" aria-expanded="false">
-       <li><a href="email-inbox.html">Categories</a></li>
-       <li><a href="email-inbox.html">Sub Categories</a></li>
-   </ul>
-</li>
-
- 
-            
             <li class="menu-title">Account</li>
 
             <li>
@@ -217,6 +185,8 @@
 
             
     </div>
+
+      <!-- Account end here -->
     <!-- Sidebar -->
 </div>
 </div>

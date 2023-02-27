@@ -15,8 +15,8 @@
                     <div class="panel-toolbar">
                         <div class="btn-group">
 
-                                 <a href="{{ route('company.add') }}" class="btn btn-sm btn-success waves-effect waves-themed"> Add Company</a>
-                               <a href="https://portal.optimus.com.bd/?ng=contacts/import_csv/" class="btn btn-sm btn-warning waves-effect waves-themed"> Import</a>
+            <a href="{{ route('company.add') }}" class="btn btn-sm btn-success waves-effect waves-themed"> Add Company</a>
+            <a href="https://portal.optimus.com.bd/?ng=contacts/import_csv/" class="btn btn-sm btn-warning waves-effect waves-themed"> Import</a>
                         </div>
 
                     </div>
