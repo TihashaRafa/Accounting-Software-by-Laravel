@@ -17,6 +17,7 @@ use App\Http\Controllers\HRMEmployeeController;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\PayrollController;
 use App\Http\Controllers\PproductController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PurchaseController;
@@ -183,9 +184,18 @@ Route::controller(PproductController::class)->group(function(){
     Route::post('/pproduct/store', 'pproductStore')->name('pproduct.store');
     Route::get('/pproduct/edit/{id}', 'PproductEdit')->name('pproduct.edit');
     Route::post('/pproduct/update', 'pproductUpdate')->name('pproduct.update');
-    Route::get('/pproduct/delete/{id}', 'PproductDelete')->name('pproduct.delete');
-   
+    Route::get('/pproduct/delete/{id}', 'PproductDelete')->name('pproduct.delete');  
 
+});
+
+// Service All 
+Route::controller(ServiceController::class)->group(function(){
+    Route::get('/service/add', 'ServiceAdd')->name('service.add');
+    Route::get('/service/all', 'ServiceAll')->name('service.all');
+    // Route::post('/pproduct/store', 'pproductStore')->name('pproduct.store');
+    // Route::get('/pproduct/edit/{id}', 'PproductEdit')->name('pproduct.edit');
+    // Route::post('/pproduct/update', 'pproductUpdate')->name('pproduct.update');
+    // Route::get('/pproduct/delete/{id}', 'PproductDelete')->name('pproduct.delete');
 });
 
 

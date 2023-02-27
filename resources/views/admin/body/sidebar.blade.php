@@ -179,8 +179,8 @@
                 <ul class="sub-menu" aria-expanded="false">
                     <li><a href="{{ route('pproduct.all') }}">Products</a></li>
                     <li><a href="{{ route('pproduct.add') }}">New Products</a></li>
-                    <li><a href="">Services</a></li>
-                    <li><a href="">New Services</a></li>
+                    <li><a href="{{ route('service.all') }}">Services</a></li>
+                    <li><a href="{{ route('service.add') }}">New Services</a></li>
                    
                     
                 </ul>
