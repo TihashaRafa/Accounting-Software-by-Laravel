@@ -20,7 +20,7 @@
 
                         <div class="btn-group">
                             <a href="{{ route('pproduct.add') }}" class="btn btn-primary waves-effect waves-themed"><i class="fal fa-plus"></i> Add Product</a>
-                            <a href="#" class="btn btn-success waves-effect waves-themed"><i class="fal fa-plus"></i> Add Service</a>
+                            <a href="{{ route('service.add') }}" class="btn btn-success waves-effect waves-themed"><i class="fal fa-plus"></i> Add Service</a>
                         </div>
 <br>
 <br>
