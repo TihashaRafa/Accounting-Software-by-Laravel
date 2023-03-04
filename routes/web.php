@@ -18,6 +18,8 @@ use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\PayrollController;
 use App\Http\Controllers\PproductController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\EmpController;
+use App\Http\Controllers\StaffController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PurchaseController;
@@ -156,12 +158,12 @@ Route::controller(AssetController::class)->group(function(){
 });
 
 // all employee 
-Route::controller(HRMEmployeeController::class)->group(function(){
-    Route::get('/employee/add', 'EmployeeAdd')->name('employee.add');
-    Route::get('/employee/all', 'EmployeeAll')->name('employee.all');
-    Route::post('/employee/store', 'EmployeeStore')->name('employee.store');
+// Route::controller(HRMEmployeeController::class)->group(function(){
+//     Route::get('/employee/add', 'EmployeeAdd')->name('employee.add');
+//     Route::get('/employee/all', 'EmployeeAll')->name('employee.all');
+//     Route::post('/employee/store', 'EmployeeStore')->name('employee.store');
   
-});
+// });
 
 // Attandance All 
 Route::controller(AttendanceController::class)->group(function(){
@@ -198,6 +200,28 @@ Route::controller(ServiceController::class)->group(function(){
     // Route::get('/pproduct/delete/{id}', 'PproductDelete')->name('pproduct.delete');
 });
 
+
+
+// Emp All 
+Route::controller(EmpController::class)->group(function(){
+    Route::get('/emp/add', 'EmpAdd')->name('emp.add');
+    Route::get('/emp/all', 'EmpAll')->name('emp.all');
+    Route::post('/emp/store', 'EmpStore')->name('emp.store');
+    Route::get('/emp/edit/{id}', 'EmpEdit')->name('emp.edit');
+    Route::post('/emp/update', 'EmpUpdate')->name('emp.update');
+    
+});
+
+// Emp All 
+Route::controller(StaffController::class)->group(function(){
+    Route::get('/staff/add', 'StaffAdd')->name('staff.add');
+    Route::get('/staff/all', 'StaffAll')->name('staff.all');
+    Route::post('/staff/store', 'StaffStore')->name('staff.store');
+    Route::get('/staff/edit/{id}', 'StaffEdit')->name('staff.edit');
+    Route::post('/staff/update', 'StaffUpdate')->name('staff.update');
+    Route::get('/staff/delete/{id}', 'StaffDelete')->name('staff.delete');
+    
+});
 
 
 

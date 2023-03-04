@@ -21,6 +21,13 @@ class CompanyController extends Controller
 
         
 public function CompanyStore(Request $request){
+
+    $unique_file_name = 'avatar.jpg';
+    if( $request ->hasFile('logo')){
+        $logo = $request -> file('logo');
+        $unique_file_name =md5(time().rand()) .'.'. $logo ->getClientOriginalExtension();
+        $logo ->move(public_path('upload/Company_logo'), $unique_file_name );
+    }
     Company::insert([
         'name' => $request->name,
         'code' => $request->code,
@@ -33,18 +40,13 @@ public function CompanyStore(Request $request){
         'state' => $request->state,
         'zip' => $request->zip,
         'country' => $request->country,
+        'logo' =>  $unique_file_name, 
        
         'created_by' =>Auth::user()->id,
         'created_at' =>Carbon::now(),
 
     ]);
 
-    if($request->file('logo')){
-        $file = $request->file('logo');
-        $filename = date('YmdHi').$file->getClientOriginalName(); //237654367.jpg
-        $file->move(public_path('upload/logo'), $filename); //data store path
-        $data['logo']=  $filename; //database name , file name
-   }
         return redirect()->route('company.all');
     }// end method
 
@@ -78,12 +80,6 @@ public function CompanyEdit($id){
             'created_at' =>Carbon::now(),
         ]);
 
-        if($request->file('logo')){
-            $file = $request->file('logo');
-            $filename = date('YmdHi').$file->getClientOriginalName(); //237654367.jpg
-            $file->move(public_path('upload/logo'), $filename); //data store path
-            $data['logo']=  $filename; //database name , file name
-       }
         return redirect()->route('company.all');
      
     }// end method

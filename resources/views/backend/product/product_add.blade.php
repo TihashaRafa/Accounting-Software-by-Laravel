@@ -22,8 +22,6 @@
                                             <input type="text" name="name" class="from-control" value=""  id="example-text-input">
                                         </div>
                                     </div>
-
-
                                     
                                     <div class="row mb-3"> 
                                          <label for="example-text-input" class="col-sm-2 col-from-label">Supplier name</label>

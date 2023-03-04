@@ -14,7 +14,6 @@
             <img class="img-fluid" src="{{ (!empty($adminData->Image))? url('upload/admin_images/'.$adminData->Image):url('upload/no_image.jpg') }}" >
         </div>
         
-        
         <div class="mt-3">
             <h4 class="font-size-16 mb-1">{{ $adminData->name}}</h4>
             
@@ -148,7 +147,8 @@
                 </a>
              
                 <ul class="sub-menu" aria-expanded="false">
-                    <li><a href="{{ route('employee.all') }}">Employees</a></li>
+               
+                <li><a href="{{ route('emp.all') }}">Emp</a></li>
                     <li><a href="{{ route('attandance.all') }}">Attandance</a></li>
                     <li><a href="{{ route('payroll.add') }}">Payroll</a></li>
                   
@@ -186,6 +186,37 @@
                 </ul>
              </li>
   <!-- HRM ends here -->
+
+
+    <!-- Reports start here -->
+
+    <li>
+                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                    <i class="ri-layout-3-line"></i>
+                    <span>Reports</span>
+                </a>
+             
+                <ul class="sub-menu" aria-expanded="false">
+                    <li><a href="{{ route('transaction.all') }}">Transaction</a></li>
+                    <li><a href="">Invoices</a></li>
+                    <li><a href="">Purchase</a></li>
+                    <li><a href="">Amount statement</a></li>
+                    <li><a href="">Income Reports</a></li>
+                    <li><a href="">Expance Reports</a></li>
+                    <li><a href="">Income VS Expance </a></li>
+                    <li><a href="">Reports By Date </a></li>
+                    <li><a href="">All Income </a></li>
+                    <li><a href="">All Expance </a></li>
+                    <li><a href="">Sales </a></li>
+                    <li><a href="">Invoice Vs Expance </a></li>
+                    <li><a href="">Export </a></li>
+                   
+                   
+                    
+                </ul>
+             </li>
+  <!-- Reports end here -->
+
   
   <!-- Account start here -->
 
@@ -201,11 +232,28 @@
                     <li><a href="{{ route('admin.logout') }}">Logout</a></li>
                     </ul>
             </li>
+        <!-- Account end here -->
 
+
+  <!-- Setting start here -->
+
+  <li class="menu-title">Setting</li>
+
+<li>
+    <a href="javascript: void(0);" class="has-arrow waves-effect">
+        <i class="ri-account-circle-line"></i>
+        <span>Setting</span>
+    </a>
+    <ul class="sub-menu" aria-expanded="false">
+        <li><a href="{{ route('staff.all') }}">Staff</a></li>
+        <li><a href="">Role</a></li>
+        </ul>
+</li>
+<!-- Setting end here -->
             
     </div>
 
-      <!-- Account end here -->
+    
     <!-- Sidebar -->
 </div>
 </div>

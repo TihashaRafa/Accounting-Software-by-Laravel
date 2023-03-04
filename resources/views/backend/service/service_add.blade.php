@@ -15,8 +15,6 @@
                 <div class="panel-hdr">
                     <h2>
                        Add Service
-                        
-
                     </h2>
 
                 </div>

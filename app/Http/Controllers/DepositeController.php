@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Deposite;
+use App\Models\Staff;
+use App\Models\Account;
 use Auth;
 use Illuminate\Support\Carbon;
 
@@ -12,12 +14,15 @@ class DepositeController extends Controller
     public function DepositeAll(){
 
         $deposite = Deposite::all();
-        return view('backend.deposite.deposite_all', compact('deposite'));
+        $staff = Staff::all();
+        $account = Account::all();
+        return view('backend.deposite.deposite_all', compact('deposite','staff','account'));
     } // end method
+
 
     public function DpositeStore(Request $request){
         Deposite::insert([
-            'account' => $request->account,
+            'account_id' => $request->account_id,
             'code' => $request->code,
             'date' => $request->date,
             'description' => $request->description,
@@ -28,7 +33,7 @@ class DepositeController extends Controller
             'tags' => $request->tags,
             'company' => $request->company,
             'payer' => $request->payer,
-            'staff' => $request->staff,
+            'staff_id' => $request->staff_id,
             'method' => $request->method,
             'status' => $request->status,
            

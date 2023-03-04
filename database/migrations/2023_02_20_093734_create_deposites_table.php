@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('deposites', function (Blueprint $table) {
             $table->id();
-            $table->string('account')->nullable();
+            $table->integer('account_id'); 
             $table->string('code')->nullable();
             $table->date('date');
             $table->string('description')->nullable();
@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('tags')->nullable();
             $table->string('company')->nullable();
             $table->string('payer')->nullable();
-            $table->string('staff')->nullable();
+            $table->string('staff_id')->nullable(); //new edit , staff
             $table->string('method')->nullable();
             $table->tinyInteger('status')->default('0');
             $table->integer('created_by')->nullable();

@@ -50,6 +50,7 @@ class AdminController extends Controller
             $file->move(public_path('upload/admin_images'), $filename); //data store path
             $data['Image']=  $filename; //database name , file name
        }
+       
        $data->save();
        return redirect()->route('admin.profile');
 

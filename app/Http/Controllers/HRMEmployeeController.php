@@ -52,31 +52,5 @@ class HRMEmployeeController extends Controller
        } //end method 
     
 
-    // public function EmployeeUpdate(Request $request){
-    //     $employee_id = $request->id;
-    
-    //     HRMEmployee::findOrFail($employee_id)->update([
-    //         'name' => $request->name,
-    //         'email' => $request->email,
-    //         'phone' => $request->phone,
-    //         'department' => $request->department,
-    //         'job_title' => $request->job_title,
-    //         'address' => $request->address,
-    //         'city' => $request->city,
-    //         'state' => $request->state,
-    //         'zip' => $request->zip,
-    //         'country' => $request->country,
-    //         'date' => $request->date,
-    //         'pay' => $request->pay,
-    //         'amount' => $request->amount,
-    //         'summary' => $request->summary,
-    //         'facebook' => $request->facebook,
-    //         'linkedin' => $request->linkedin,
-    //         'twitter' => $request->twitter,
-
-    //         'created_by' =>Auth::user()->id,
-    //         'created_at' =>Carbon::now(),
-    //     ]);
-    //     return redirect()->route('employee.all');
-    // }// end method
+  
 }

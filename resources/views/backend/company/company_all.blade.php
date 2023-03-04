@@ -16,14 +16,16 @@
                         <div class="btn-group">
 
             <a href="{{ route('company.add') }}" class="btn btn-sm btn-success waves-effect waves-themed"> Add Company</a>
-            <a href="https://portal.optimus.com.bd/?ng=contacts/import_csv/" class="btn btn-sm btn-warning waves-effect waves-themed"> Import</a>
+            <a href="#" class="btn btn-sm btn-warning waves-effect waves-themed"> Import</a>
                         </div>
 
                     </div>
-                </div><div class="row mb-3"><div class="col-sm-12 col-md-6 d-flex align-items-center justify-content-start"><div id="clx_datatable_filter" class="dataTables_filter"><label></label></div></div><div class="col-sm-12 col-md-6 d-flex align-items-center justify-content-end"><div class="dt-buttons">          <button class="btn buttons-pdf buttons-html5 btn-danger btn-sm mr-1" tabindex="0" aria-controls="clx_datatable" type="button" title="Generate PDF"><span>PDF</span></button> <button class="btn buttons-excel buttons-html5 btn-success btn-sm mr-1" tabindex="0" aria-controls="clx_datatable" type="button" title="Generate Excel"><span>Excel</span></button> <button class="btn buttons-csv buttons-html5 btn-primary btn-sm mr-1" tabindex="0" aria-controls="clx_datatable" type="button" title="Generate CSV"><span>CSV</span></button> <button class="btn buttons-copy buttons-html5 btn-dark btn-sm mr-1" tabindex="0" aria-controls="clx_datatable" type="button" title="Copy to clipboard"><span>Copy</span></button> <button class="btn buttons-print btn-secondary btn-sm" tabindex="0" aria-controls="clx_datatable" type="button" title="Print Table"><span>Print</span></button> </div></div></div>
+                </div><div class="row mb-3">
+                    <div class="col-sm-12 col-md-6 d-flex align-items-center justify-content-start">
+                        <div id="clx_datatable_filter" class="dataTables_filter"><label></label></div></div><div class="col-sm-12 col-md-6 d-flex align-items-center justify-content-end"><div class="dt-buttons">          <button class="btn buttons-pdf buttons-html5 btn-danger btn-sm mr-1" tabindex="0" aria-controls="clx_datatable" type="button" title="Generate PDF"><span>PDF</span></button> <button class="btn buttons-excel buttons-html5 btn-success btn-sm mr-1" tabindex="0" aria-controls="clx_datatable" type="button" title="Generate Excel"><span>Excel</span></button> <button class="btn buttons-csv buttons-html5 btn-primary btn-sm mr-1" tabindex="0" aria-controls="clx_datatable" type="button" title="Generate CSV"><span>CSV</span></button> <button class="btn buttons-copy buttons-html5 btn-dark btn-sm mr-1" tabindex="0" aria-controls="clx_datatable" type="button" title="Copy to clipboard"><span>Copy</span></button> <button class="btn buttons-print btn-secondary btn-sm" tabindex="0" aria-controls="clx_datatable" type="button" title="Print Table"><span>Print</span></button> </div></div></div>
                                   
                                     
-                                        <table id="datatable" class="table table-bordered dt-responsive nowarp" style="border-collapse: collapse; border-specing: 0; width: 100%;">
+                         <table id="datatable" class="table table-bordered dt-responsive nowarp" style="border-collapse: collapse; border-specing: 0; width: 100%;">
                                             <thead>
                                                 <tr>
                                                     
@@ -39,8 +41,8 @@
                                                 @foreach($company as $key =>$items)
 
                                                 <tr>
-                                                   
-                                                    <td>{{ $items->logo }}</td>
+                                                   <td><img style="max-height: 20px;" class="rounded float-start" type="file" name="logo" src="{{ asset('upload/Company_logo/'.$items->logo) }}" ></td>
+                                                
                                                     <td>{{ $items->code }}</td>
                                                     <td>{{ $items->name }}</td>
                                                     <td>{{ $items->email }}</td>

@@ -27,7 +27,7 @@
 
 
             <form method ="post" action= "{{ route('company.store') }}" id="myForm" enctype="multipart/form-data">
-                                            @csrf 
+                                        @csrf 
 
 
                     <div class="row">
@@ -85,12 +85,11 @@
 
                         <div class="col-md-3">
 
-                            <div class="mb-3"><label for="logo_url">Logo URL</label>
+                            <div class="mb-3"><label for="logo_url">Logo</label>
 
                                 <div><input type="file" id="logo" name="logo" class="form-control" value="">
 
                                 </div>
-
 
                             </div>
 

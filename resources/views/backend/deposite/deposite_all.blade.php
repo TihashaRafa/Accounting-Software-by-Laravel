@@ -21,24 +21,17 @@
                         </div>
 
                         <form method ="post" action= "{{ route('deposite.store') }}" id="myForm" enctype="multipart/form-data">
-                                            @csrf 
+                            @csrf 
 
                          <div class="row mb-3">
                             <label for="example-text-input" class="col-sm-2 col-from-label">Account</label>
-                                <select id="account" name="account" class="form-control select2-hidden-accessible">
-                                    <option>Choose an Account</option>
-                                    <option>bKash Merchant</option>
-                                    <option>City Bank</option>
-                                    <option>Nagad Merchant</option>
-                                    <option>aamarPay</option>
-                                    <option>(Publicia) bKash Personal</option>
-                                    <option>(Publicia) Nagad Personal</option>
-                                    <option>(Publicia) Brac Bank</option>
-                                    <option>Cash</option>
-                                    <option>PayPal (business@limda.net)</option>
-                                </select>
-                        
+                            <select id="account" name="account_id" class="form-control select2-hidden-accessible">
+                                @foreach($account as $acc)
+                            <option value="{{ $acc->id }}">{{ $acc-> account_id }}</option>
+                            @endforeach
+                                    </select>
                             </div>
+
 
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-from-label">Code</label>    
@@ -96,16 +89,10 @@
 
                                 <div class="row mb-3"> 
                                     <label for="example-text-input" class="col-sm-2 col-from-label">company</label>
-                                 <select id="company" name="company" class="form-control select2-hidden-accessible">
-                                    <option>None</option>
-                                    <option>Optimus Technologies</option>
-                                    <option>SoftifyBD Ltd</option>
-                                    <option>Limda Host</option>
-                                    <option>Health Point BD</option>
-                                    <option>Hexagon Bdtech Limited</option>
-                                    <option>AmarStationery</option>
-                                    <option>Kloud Technologies</option>
-                                </select>
+                                    <select id="company" name="company" class="form-control select2-hidden-accessible">
+                                    <option value="Interest Income">Interest Income</option>
+                                        <option value="Owner Contribution">Owner Contribution</option>   
+                                    </select>
                                     </div>
 
                                     <div class="row mb-3"> 
@@ -123,12 +110,14 @@
                                     </select>
                                     </div>
 
+                                   
+
                                     <div class="row mb-3"> 
                                          <label for="example-text-input" class="col-sm-2 col-from-label">Staff</label>
-                                         <select id="staff" name="staff" class="form-control select2-hidden-accessible">
-                                        <option>None</option>
-                                        <option>Junaid Miaje</option>
-                                        <option>Tahmiduzzama Rafi</option>
+                                         <select id="staff" name="staff_id" class="form-control select2-hidden-accessible">
+                                         @foreach($staff as $st)
+                                        <option value="{{ $st->id }}">{{ $st->name }}</option>
+                                        @endforeach
                                     </select>
                                     </div>
 
@@ -158,7 +147,7 @@
                             </div>
 
                                 
-                                    <input type="submit" class="btn btn-rounded btn-info waves-effect waves-light" value="Add Deposite">
+                            <input type="submit" class="btn btn-rounded btn-info waves-effect waves-light" value="Add Deposite">
                         </form>
 
                     </div>
@@ -199,12 +188,16 @@
 
                                     <tr>
 
-                                        <td class="h6">{{ $items->account }} </td>
+                                    <td class="h6">    {{ $items-> tags }}  </td>                                 
+                                   
+                                 
+                             
                                         <td class="h6 text-info"><a href="https://portal.optimus.com.bd/?ng=transactions/manage/83/">
                                            <span class="text-info"> {{ $items->description }} </span></a>  <br>
                                            <span class="text-info"> {{ $items->company }} </span></a>  <br>
                                            {{ $items->code }} 
                                          <br>
+                                         <td></td>
                                       
                                         </td>
                                         
