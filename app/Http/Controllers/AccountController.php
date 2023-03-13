@@ -20,8 +20,10 @@ class AccountController extends Controller
     } //end 
 
     public function AccountStore(Request $request){
+        // $accounts = Account::with('deposits')->get();
+
         Account::insert([
-            'account_title' => $request->account_title,
+            'account_id' => $request->account_id,
             'description' => $request->description,
             'balance_bdt' => $request->balance_bdt,
             'balance_usd' => $request->balance_usd,
@@ -50,7 +52,7 @@ public function AccountUpdate(Request $request){
     $account_id = $request->id;
 
     Account::findOrFail($account_id)->update([
-        'account_title' => $request->account_title,
+        'account_id' => $request->account_id,
         'description' => $request->description,
         'balance_bdt' => $request->balance_bdt,
         'balance_usd' => $request->balance_usd,

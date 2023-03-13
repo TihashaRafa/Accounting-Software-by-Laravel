@@ -20,7 +20,7 @@ class StaffController extends Controller
     public function StaffStore(Request $request){
         Staff::insert([
             'email' => $request->email,
-            'name' => $request->name,
+            'staff_id' => $request->staff_id,
             'phpne' => $request->phpne,
             'alt_email' => $request->alt_email,
             'mobile_phone' => $request->mobile_phone,
@@ -47,7 +47,7 @@ class StaffController extends Controller
 
         Staff::findOrFail($staff_id)->update([
             'email' => $request->email,
-            'name' => $request->name,
+            'staff_id' => $request->staff_id	,
             'phpne' => $request->phpne,
             'alt_email' => $request->alt_email,
             'mobile_phone' => $request->mobile_phone,

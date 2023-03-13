@@ -22,13 +22,14 @@ return new class extends Migration
             $table->string('attached')->nullable();
             $table->string('currency')->nullable();
             $table->string('amount')->nullable();
-            $table->string('catagory')->nullable();
+            $table->string('catagory_name')->nullable();
             $table->string('tags')->nullable();
-            $table->string('company')->nullable();
-            $table->string('payer')->nullable();
-            $table->string('staff_id')->nullable(); //new edit , staff
-            $table->string('method')->nullable();
+            $table->string('company_name')->nullable();
+            $table->string('payer_name')->nullable();
+            $table->string('staff_id')->nullable();
+            $table->string('payment_method_name')->nullable();
             $table->tinyInteger('status')->default('0');
+           
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();
             $table->timestamps();

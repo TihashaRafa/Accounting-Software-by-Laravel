@@ -19,7 +19,13 @@ use App\Http\Controllers\PayrollController;
 use App\Http\Controllers\PproductController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\EmpController;
+use App\Http\Controllers\FullCalenderController;
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\CatagoryController;
+use App\Http\Controllers\ExpanceCtagoryController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\PaymentMethodController;
+use App\Http\Controllers\PayerController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PurchaseController;
@@ -212,7 +218,7 @@ Route::controller(EmpController::class)->group(function(){
     
 });
 
-// Emp All 
+// staff All 
 Route::controller(StaffController::class)->group(function(){
     Route::get('/staff/add', 'StaffAdd')->name('staff.add');
     Route::get('/staff/all', 'StaffAll')->name('staff.all');
@@ -223,13 +229,71 @@ Route::controller(StaffController::class)->group(function(){
     
 });
 
+Route::get('full_calendar', [FullCalenderController::class, 'index']);
 
+
+// Payment All 
+Route::controller(PaymentController::class)->group(function(){
+    Route::get('/payment/all', 'paymentAll')->name('payment.all');
+    
+});
+
+
+//Income Catagory All 
+Route::controller(CatagoryController::class)->group(function(){
+    Route::get('/catagory/all', 'catagoryAll')->name('catagory.all');
+    Route::post('/catagory/store', 'catagoryStore')->name('catagory.store');
+    Route::get('/catagory/edit/{id}', 'catagoryEdit')->name('catagory.edit');
+    Route::post('/catagory/update', 'catagoryUpdate')->name('catagory.update');
+    Route::post('/catagory/delete/{id}', 'CatagoryDelete')->name('catagory.delete'); 
+});
+
+
+//Expance Catagory All 
+Route::controller(ExpanceCtagoryController::class)->group(function(){
+    Route::get('/expance/catagory/all', 'expancecatagoryAll')->name('expance_catagory.all');
+    Route::post('/expance/catagory/store', 'expancecatagoryStore')->name('expance_catagory.store');
+    Route::get('/expance/catagory/edit/{id}', 'expancecatagoryEdit')->name('expance_catagory.edit');
+    Route::post('/expance/catagory/update', 'expancecatagoryUpdate')->name('expance_catagory.update');
+    Route::post('/expance/catagory/delete/{id}', 'expanceCatagoryDelete')->name('expance_catagory.delete');  
+});
+
+
+//Payment Method Catagory All 
+Route::controller(PaymentMethodController::class)->group(function(){
+    Route::get('/payment/method/all', 'PaymentMethodAll')->name('PaymentMethod.all');
+    Route::post('/payment/method/store', 'PaymentMethodStore')->name('PaymentMethod.store');
+    Route::get('/payment/method/edit/{id}', 'PaymentMethodEdit')->name('PaymentMethod.edit');
+    Route::post('/payment/method/update', 'PaymentMethodUpdate')->name('PaymentMethod.update');
+    Route::post('/payment/method/delete/{id}', 'PaymentMethodDelete')->name('PaymentMethod.delete');  
+});
+
+//payer All 
+Route::controller(PayerController::class)->group(function(){
+    Route::get('/payer/all', 'PayerAll')->name('payer.all');
+    Route::post('/payer/store', 'PayerStore')->name('payer.store');
+    Route::get('/payer/edit/{id}', 'PayerEdit')->name('payer.edit');
+    Route::post('/payer/update', 'PayerUpdate')->name('payer.update');
+    Route::post('/payer/delete/{id}', 'PayerDelete')->name('payer.delete');  
+});
+
+
+
+// invoice All 
+Route::controller(InvoiceController::class)->group(function(){
+    Route::get('/invoice/all', 'InvoiceAll')->name('invoice.all');
+    Route::get('/invoice/add', 'InvoiceAdd')->name('invoice.add');
+    // Route::post('/staff/store', 'StaffStore')->name('staff.store');
+    // Route::get('/staff/edit/{id}', 'StaffEdit')->name('staff.edit');
+    // Route::post('/staff/update', 'StaffUpdate')->name('staff.update');
+    // Route::get('/staff/delete/{id}', 'StaffDelete')->name('staff.delete');
+    
+});
 
 // Group All
 Route::controller(GroupController::class)->group(function(){
     Route::get('/group/all', 'GroupAll')->name('group.all');
-    Route::get('/group/add', 'groupAdd')->name('group.add');
-   
+    Route::get('/group/add', 'groupAdd')->name('group.add'); 
     
 });
 

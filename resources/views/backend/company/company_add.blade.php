@@ -36,7 +36,7 @@
                             <div class="mb-3">
                                 <label for="company_name">Company Name<small class="red">*</small></label>
 
-                                <div><input type="text" id="company_name" name="name" class="form-control" value="">
+                                <div><input type="text" id="company_name" name="company_name" class="form-control" value="">
 
                                 </div>
 

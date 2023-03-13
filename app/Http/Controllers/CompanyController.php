@@ -29,7 +29,7 @@ public function CompanyStore(Request $request){
         $logo ->move(public_path('upload/Company_logo'), $unique_file_name );
     }
     Company::insert([
-        'name' => $request->name,
+        'company_name' => $request->company_name,
         'code' => $request->code,
         'business_number' => $request->business_number,
         'url' => $request->url,
@@ -64,7 +64,7 @@ public function CompanyEdit($id){
         $comapny_id = $request->id;
 
         Company::findOrFail($comapny_id)->update([
-            'name' => $request->name,
+            'company_name' => $request->company_name,
             'code' => $request->code,
             'business_number' => $request->business_number,
             'url' => $request->url,

@@ -88,14 +88,11 @@
                 </a>
              
                 <ul class="sub-menu" aria-expanded="false">
-                    <li><a href="#">Invoice</a></li>
-                    <li><a href="#">New Invoice</a></li>
-                    <li><a href="#">POS</a></li>
+                    <li><a href="{{ route('invoice.all') }}">Invoice</a></li>
+                    <li><a href="{{ route('invoice.add') }}">New Invoice</a></li>
                     <li><a href="#">Recurring Invoice</a></li>
                     <li><a href="#">New Recurring Invoice</a></li>
-                    <li><a href="#">Quotes</a></li>
-                    <li><a href="#">create New Quotes</a></li>
-                    <li><a href="#">Payments</a></li>   
+                    <li><a href="{{ route('payment.all') }}">Payments</a></li>   
                 </ul>
              </li>
   <!-- Sales ends here -->
@@ -173,7 +170,7 @@
   <li>
                 <a href="javascript: void(0);" class="has-arrow waves-effect">
                     <i class="ri-layout-3-line"></i>
-                    <span>Products $ Services</span>
+                    <span>Products & Services</span>
                 </a>
              
                 <ul class="sub-menu" aria-expanded="false">
@@ -247,6 +244,10 @@
     <ul class="sub-menu" aria-expanded="false">
         <li><a href="{{ route('staff.all') }}">Staff</a></li>
         <li><a href="">Role</a></li>
+        <li><a href="{{ route('payer.all') }}">Payer</a></li>
+        <li><a href="{{ route('catagory.all') }}">Income Catagory</a></li>
+        <li><a href="{{ route('expance_catagory.all') }}">Expance Catagory</a></li>
+        <li><a href="{{ route('PaymentMethod.all') }}">Payment Method</a></li>
         </ul>
 </li>
 <!-- Setting end here -->

@@ -28,7 +28,7 @@
 
                             <div class="mb-3">
                                 <label for="fullname">Full Name</label>
-                                <input type="text" class="form-control" id="name" value="{{ $staff -> name}}" name="name">
+                                <input type="text" class="form-control" id="name" value="{{ $staff -> staff_id}}" name="staff_id">
                             </div>
 
                             <div class="mb-3">

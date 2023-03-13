@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('staff', function (Blueprint $table) {
             $table->id();
             $table->string('email')->unique();
-            $table->string('name');
+            $table->string('staff_id');
             $table->string('phpne');
             $table->string('alt_email');
             $table->string('mobile_phone');

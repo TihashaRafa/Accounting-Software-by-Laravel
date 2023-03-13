@@ -31,10 +31,10 @@
                                 <tbody>
                                 @foreach($staff as $key =>$items)  
                             <tr class="odd">
-                                        <td class="dtr-control sorting_1" tabindex="0">                                                     <img src="https://portal.optimus.com.bd/ui/lib/img/     default-user-avatar.png" style="max-height: 60px;" alt="">
+                                        <td class="dtr-control sorting_1" tabindex="0">  <img src="" style="max-height: 60px;" alt="">
                                     </td>
                                     <td class="h6">
-                                           {{ $items->name }}
+                                           {{ $items->staff_id	}}
                                             <br> 
                                             {{ $items->email }}
                                              <br>{{ $items->phpne }}

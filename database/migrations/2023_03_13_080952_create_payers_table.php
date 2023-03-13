@@ -13,9 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('purchase_data', function (Blueprint $table) {
+        Schema::create('payers', function (Blueprint $table) {
             $table->id();
-            
+
+            $table->string('payer_name')->nullable();
+
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('purchase_data');
+        Schema::dropIfExists('payers');
     }
 };

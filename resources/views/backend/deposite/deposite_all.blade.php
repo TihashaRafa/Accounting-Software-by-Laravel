@@ -3,167 +3,140 @@
 @section('admin')
 
 <div class="page-content">
-                    <div class="container-fluid">
+    <div class="container-fluid">
 
-<div class="row">
-        <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="panel">
-                <div class="panel-hdr">
-                    <h2>Add Deposit</h2>
-
-                </div>
-                <div class="panel-container" id="ibox_form">
-
-                    <div class="panel-content">
-
-                        <div class="alert alert-danger" id="emsg" style="display: none;">
-                            <span id="emsgbody"></span>
-                        </div>
-
-                        <form method ="post" action= "{{ route('deposite.store') }}" id="myForm" enctype="multipart/form-data">
-                            @csrf 
-
-                         <div class="row mb-3">
-                            <label for="example-text-input" class="col-sm-2 col-from-label">Account</label>
-                            <select id="account" name="account_id" class="form-control select2-hidden-accessible">
-                                @foreach($account as $acc)
-                            <option value="{{ $acc->id }}">{{ $acc-> account_id }}</option>
-                            @endforeach
-                                    </select>
-                            </div>
-
-
-                            <div class="row mb-3">
-                                <label for="example-text-input" class="col-sm-2 col-from-label">Code</label>    
-                                     <input type="text" name="code" class="form-control select2-hidden-accessible" placeholder="INC-00073" value="" id="example-text-input">
-                            </div>
-
-                            <div class="row mb-3">
-                                <label for="example-text-input" class="col-sm-2 col-from-label">Date</label>    
-                                     <input type="date" name="date"  class="form-control select2-hidden-accessible" value="" id="example-text-input">
-                            </div>
-
-                            <div class="row mb-3">
-                                <label for="example-text-input" class="col-sm-2 col-from-label">Description</label>    
-                                     <input type="text" name="description" class="form-control select2-hidden-accessible" value="" id="example-text-input">
-                            </div>
-
-                            <div class="row mb-3">
-                                <label for="example-text-input" class="col-sm-2 col-from-label">Currency</label>    
-                                <select id="currency" name="currency" class="form-control select2-hidden-accessible">
-                                    <option>BDT</option>
-                                    <option>USD</option>
-                            </select>
-                            </div>
-
-
-                            <div class="row mb-3">
-                                <label for="example-text-input" class="col-sm-2 col-from-label">Amount</label>    
-                                     <input type="text" name="amount"  class="form-control select2-hidden-accessible" value="" id="example-text-input">
-                            </div>
-
-                            <div class="row mb-3">
-                                <label for="example-text-input" class="col-sm-2 col-from-label">Catagory</label>    
-                                <select id="catagory" name="catagory" class="form-control select2-hidden-accessible">
-                                        <option value="Uncategorized" data-select2-id="6">Uncategorized</option>
-					                    <option value="Uncategorized">Uncategorized</option>
-                                        <option value="Regular Income">Regular Income</option>
-                                        <option value="Selling Software">Selling Software</option>
-                                        <option value="Part Time Work">Part Time Work</option>
-                                        <option value="Account Transfer">Account Transfer</option>
-                                        <option value="Home equity">Home equity</option>
-                                        <option value="Rent &amp; Royalties">Rent &amp; Royalties</option>
-                                        <option value="Equities">Equities</option>
-                                        <option value="Salary">Salary</option>
-                                        <option value="Other Income">Other Income</option>
-                                        <option value="Expense Refund">Expense Refund</option>
-                                        <option value="Interest Income">Interest Income</option>
-                                        <option value="Owner Contribution">Owner Contribution</option>   
-                            </select>
-                            </div>
-
-                            <div class="row mb-3">
-                                <label for="example-text-input" class="col-sm-2 col-from-label">Tags</label>    
-                                     <input type="text" name="tags"  class="form-control select2-hidden-accessible" value="" >
-                            </div>
-
-                                <div class="row mb-3"> 
-                                    <label for="example-text-input" class="col-sm-2 col-from-label">company</label>
-                                    <select id="company" name="company" class="form-control select2-hidden-accessible">
-                                    <option value="Interest Income">Interest Income</option>
-                                        <option value="Owner Contribution">Owner Contribution</option>   
-                                    </select>
-                                    </div>
-
-                                    <div class="row mb-3"> 
-                                         <label for="example-text-input" class="col-sm-2 col-from-label">Payer</label>
-                                    <select id="payer" name="payer" class="form-control select2-hidden-accessible">
-                                        <option>Choose Contact</option>
-                                        <option>Junaid Miaje</option>
-                                        <option>Mostaim Billah Murad</option>
-                                        <option>Farhad Hossen Kayes</option>
-                                        <option>Main Uddin</option>
-                                        <option>Hashibul Hassan</option>
-                                        <option>Raisuddin Faham</option>
-                                        <option>Rubaiyat Bin Arif</option>
-                                        <option>MD Ashraf Hossain</option>
-                                    </select>
-                                    </div>
-
-                                   
-
-                                    <div class="row mb-3"> 
-                                         <label for="example-text-input" class="col-sm-2 col-from-label">Staff</label>
-                                         <select id="staff" name="staff_id" class="form-control select2-hidden-accessible">
-                                         @foreach($staff as $st)
-                                        <option value="{{ $st->id }}">{{ $st->name }}</option>
-                                        @endforeach
-                                    </select>
-                                    </div>
-
-                                    <div class="row mb-3"> 
-                                     <label for="example-text-input" class="col-sm-2 col-from-label">Method</label>
-                                         <select id="method" name="method" class="form-control select2-hidden-accessible">
-                                        <option value="" data-select2-id="8">Select Payment Method</option>
-                                        <option value="Cash">Cash</option>
-                                        <option value="Check">Check</option>
-                                        <option value="Credit Card">Credit Card</option>
-                                        <option value="Debit">Debit</option>
-                                        <option value="Electronic Transfer">Electronic Transfer</option>
-                                        <option value="Paypal">Paypal</option>
-                                        <option value="ATM Withdrawals">ATM Withdrawals</option>
-                                        <option value="bKash Merchant">bKash Merchant</option>
-                                        <option value="Nagad Merchant">Nagad Merchant</option>
-                                        <option value="City Bank (Limda Host)">City Bank (Limda Host)</option>
-                                        <option value="Brac Bank (CITBD)">Brac Bank (CITBD)</option>
-                                        <option value="City Bank (Optimus Technologies)">City Bank (Optimus Technologies)</option>
-                                        <option value="aamarPay">aamarPay</option>
-                                    </select>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                <label for="example-text-input" class="col-sm-2 col-from-label">Status</label>    
-                                     <input type="text" name="status" class="form-control select2-hidden-accessible" value="" >
-                            </div>
-
-                                
-                            <input type="submit" class="btn btn-rounded btn-info waves-effect waves-light" value="Add Deposite">
-                        </form>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="panel">
+                    <div class="panel-hdr">
+                        <h2>Add Deposit</h2>
 
                     </div>
+                    <div class="panel-container" id="ibox_form">
+
+                        <div class="panel-content">
+
+                            <div class="alert alert-danger" id="emsg" style="display: none;">
+                                <span id="emsgbody"></span>
+                            </div>
+
+                            <form method="post" action="{{ route('deposite.store') }}" id="myForm" enctype="multipart/form-data">
+                                @csrf
+
+                                <div class="row mb-3">
+                                    <label for="example-text-input" class="col-sm-2 col-from-label">Account</label>
+
+                                    <select name="account_id">
+                                        @foreach ($account as $acc)
+                                        <option  value="{{ $acc->id }}">{{ $acc->account_id  }}</option>
+                                        @endforeach
+                                    </select>
+
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="example-text-input" class="col-sm-2 col-from-label">Code</label>
+                                    <input type="text" name="code" class="form-control select2-hidden-accessible" placeholder="INC-00073" value="" id="example-text-input">
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="example-text-input" class="col-sm-2 col-from-label">Date</label>
+                                    <input type="date" name="date" class="form-control select2-hidden-accessible" value="" id="example-text-input">
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="example-text-input" class="col-sm-2 col-from-label">Description</label>
+                                    <input type="text" name="description" class="form-control select2-hidden-accessible" value="" id="example-text-input">
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="example-text-input" class="col-sm-2 col-from-label">Currency</label>
+                                    <select id="currency" name="currency" class="form-control select2-hidden-accessible">
+                                        <option>BDT</option>
+                                        <option>USD</option>
+                                    </select>
+                                </div>
+
+
+                                <div class="row mb-3">
+                                    <label for="example-text-input" class="col-sm-2 col-from-label">Amount</label>
+                                    <input type="text" name="amount" class="form-control select2-hidden-accessible" value="" id="example-text-input">
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="example-text-input" class="col-sm-2 col-from-label">Catagory</label>
+                                    <select id="catagory" name="catagory_name" class="form-control select2-hidden-accessible">
+                        
+                                        @foreach ($catagory as $cat)
+                                        <option value="{{ $cat->id }}">{{ $cat->catagory_name  }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="example-text-input" class="col-sm-2 col-from-label">Tags</label>
+                                    <input type="text" name="tags" class="form-control select2-hidden-accessible" value="">
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="example-text-input" class="col-sm-2 col-from-label">company</label>
+                                    <select name="company_name">
+                                        @foreach ($company as $com)
+                                        <option value="{{ $com->id }}">{{ $com->company_name  }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="example-text-input" class="col-sm-2 col-from-label">Payer</label>
+                                    <select id="payer" name="payer_name" class="form-control select2-hidden-accessible">
+                                    @foreach ($payer as $pay)
+                                        <option value="{{ $pay->id }}">{{ $pay->payer_name  }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
 
 
 
+                                <div class="row mb-3">
+                                    <label for="example-text-input" class="col-sm-2 col-from-label">Staff</label>
+                                    <select name="staff_id">
+                                     @foreach ($staff as $stf)
+                                        <option value="{{ $stf->id }}"> {{ $stf->staff_id }}</option>
+                                             @endforeach
+                                    </select>
+
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="example-text-input" class="col-sm-2 col-from-label">Method</label>
+                                    <select id="method" name="payment_method_name" class="form-control select2-hidden-accessible">
+                                    @foreach ($PaymentMethod as $met)
+                                        <option value="{{ $met->id }}">{{ $met->payment_method_name  }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="example-text-input" class="col-sm-2 col-from-label">Status</label>
+                                    <input type="text" name="status" class="form-control select2-hidden-accessible" value="">
+                                </div>
 
 
+                                <input type="submit" class="btn btn-rounded btn-info waves-effect waves-light" value="Add Deposite">
+                            </form>
+
+                        </div>
+
+
+                    </div>
                 </div>
+
+
+
+                <!-- show all data -->
+
             </div>
-
-
-
-<!-- show all data -->
-
-        </div>
             <div class="col-lg-8 col-md-6 col-sm-12">
                 <div class="panel">
                     <div class="panel-hdr">
@@ -176,34 +149,31 @@
 
                             <table class="table table-bordered table-striped sys_table">
                                 <thead style="background:#f0f2ff">
-                                <tr>
-                                    <th class="h6">Account</th>
-                                    <th class="h6" width="50%">Description</th>
-                                    <th class="h6">Amount</th>
+                                    <tr>
+                                        <th class="h6">Account</th>
+                                        <th class="h6" width="50%">Description</th>
+                                        <th class="h6">Amount</th>
+                                        <th class="h6">Staff</th>
+                                        <th class="h6">company</th>
 
-                                </tr>
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($deposite as $key =>$items)
+
+                                    @foreach($deposite as $items)
 
                                     <tr>
-
-                                    <td class="h6">    {{ $items-> tags }}  </td>                                 
-                                   
-                                 
-                             
-                                        <td class="h6 text-info"><a href="https://portal.optimus.com.bd/?ng=transactions/manage/83/">
-                                           <span class="text-info"> {{ $items->description }} </span></a>  <br>
-                                           <span class="text-info"> {{ $items->company }} </span></a>  <br>
-                                           {{ $items->code }} 
-                                         <br>
-                                         <td></td>
-                                      
+                                        <td class="h6 text-info">
+                                            {{$items->account_id}}
                                         </td>
-                                        
-                                        <td class="amount text-success h6" data-a-sign="৳" data-a-sep="," data-a-dec="." data-p-sign="p">{{ $items-> amount }}</td>
+                                        <td>{{$items->description}}</td>
+
+                                        <td>{{ $items->amount }}</td>
+                                        <td>{{ $items->staff_id }}</td>
+                                        <td>{{ $items->company_name }}</td>
+                                       
                                     </tr>
-                                @endforeach
+                                    @endforeach
                                 </tbody>
                             </table>
 
@@ -213,12 +183,12 @@
                 </div>
             </div>
 
-        
 
 
+
+        </div>
     </div>
-    </div>
-    </div>
+</div>
 <!-- show all data end -->
 
 @endsection

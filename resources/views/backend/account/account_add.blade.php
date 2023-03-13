@@ -21,7 +21,7 @@
                            
                             <div class="mb-3">
                                 <label for="account">Account Title*</label>
-                                <input type="text" class="form-control" id="account" name="account_title">
+                                <input type="text" class="form-control" id="account" name="account_id">
 
                             </div>
                             <div class="mb-3">

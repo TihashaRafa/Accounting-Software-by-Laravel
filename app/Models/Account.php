@@ -9,4 +9,11 @@ class Account extends Model
 {
     use HasFactory;
     protected $guarded = [];
+ 
+    // public function deposit()
+    // {
+    //     return $this->belongsTo(Deposit::class, 'account_id');
+    // }
+    
 }
+

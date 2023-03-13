@@ -44,7 +44,7 @@
                                                    <td><img style="max-height: 20px;" class="rounded float-start" type="file" name="logo" src="{{ asset('upload/Company_logo/'.$items->logo) }}" ></td>
                                                 
                                                     <td>{{ $items->code }}</td>
-                                                    <td>{{ $items->name }}</td>
+                                                    <td>{{ $items->company_name }}</td>
                                                     <td>{{ $items->email }}</td>
                                                     <td>{{ $items->phone }}</td>                                    
 
