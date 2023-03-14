@@ -26,6 +26,7 @@ use App\Http\Controllers\ExpanceCtagoryController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PaymentMethodController;
 use App\Http\Controllers\PayerController;
+use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PurchaseController;
@@ -275,6 +276,16 @@ Route::controller(PayerController::class)->group(function(){
     Route::get('/payer/edit/{id}', 'PayerEdit')->name('payer.edit');
     Route::post('/payer/update', 'PayerUpdate')->name('payer.update');
     Route::post('/payer/delete/{id}', 'PayerDelete')->name('payer.delete');  
+});
+
+
+//owner All 
+Route::controller(OwnerController::class)->group(function(){
+    Route::get('/owner/all', 'OwnerAll')->name('owner.all');
+    Route::post('/owner/store', 'OwnerStore')->name('owner.store');
+    Route::get('/owner/edit/{id}', 'OwnerEdit')->name('owner.edit');
+    Route::post('/owner/update', 'OwnerUpdate')->name('owner.update');
+    Route::post('/owner/delete/{id}', 'OwnerDelete')->name('owner.delete');  
 });
 
 

@@ -244,7 +244,7 @@
     <ul class="sub-menu" aria-expanded="false">
         <li><a href="{{ route('staff.all') }}">Staff</a></li>
         <li><a href="">Role</a></li>
-        <li><a href="">Owner</a></li>
+        <li><a href="{{ route('owner.all') }}">Owner</a></li>
         <li><a href="">Unit</a></li>
         <li><a href="{{ route('payer.all') }}">Payer</a></li>
         <li><a href="{{ route('catagory.all') }}">Income Catagory</a></li>
