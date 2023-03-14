@@ -79,11 +79,11 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($bill as $key =>$items)
+                                @foreach($bill as $items)
 
                                     <tr>
                                         <td class="h6">{{ $items->title }} </td>
-                                        <td class="h6 text-info"><a href="https://portal.optimus.com.bd/?ng=transactions/manage/83/">
+                                        <td class="h6 text-info"><a href="#">
                                         <span class="text-info"> {{ $items->duedate }} </span></a>  <br>
                                          <br>
                                       

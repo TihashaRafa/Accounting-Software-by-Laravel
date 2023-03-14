@@ -26,6 +26,7 @@
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-2 col-from-label">Account</label>
                                     <select name="account_id">
+                                    <option>Choose an option</option>
                                         @foreach ($account as $acc)
                                         <option value="{{ $acc->id }}">{{ $acc->account_id }}</option>
                                         @endforeach
@@ -64,7 +65,7 @@
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-2 col-from-label">Catagory</label>
                                     <select id="catagory" name="Expance_catagory_name" class="form-control select2-hidden-accessible">
-                        
+                                    <option>Choose an option</option>
                                         @foreach ($ExpanceCatagory as $excat)
                                         <option value="{{ $excat->id }}">{{ $excat->Expance_catagory_name  }}</option>
                                         @endforeach
@@ -79,6 +80,7 @@
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-2 col-from-label">company</label>
                                     <select name="company_name">
+                                    <option>Choose an option</option>
                                         @foreach ($company as $com)
                                         <option value="{{ $com->id }}">{{ $com->company_name  }}</option>
                                         @endforeach
@@ -88,6 +90,7 @@
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-2 col-from-label">Payer</label>
                                     <select id="payer" name="payer_name" class="form-control select2-hidden-accessible">
+                                    <option>Choose an option</option>
                                     @foreach ($payer as $pay)
                                         <option value="{{ $pay->id }}">{{ $pay->payer_name  }}</option>
                                         @endforeach
@@ -98,6 +101,7 @@
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-2 col-from-label">Staff</label>
                                     <select name="staff_id">
+                                    <option>Choose an option</option>
                                      @foreach ($staff as $stf)
                                         <option value="{{ $stf->id }}"> {{ $stf->staff_id }}</option>
                                              @endforeach
@@ -108,6 +112,7 @@
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-2 col-from-label">Method</label>
                                     <select id="method" name="payment_method_name" class="form-control select2-hidden-accessible">
+                                    <option>Choose an option</option>
                                     @foreach ($PaymentMethod as $met)
                                         <option value="{{ $met->id }}">{{ $met->payment_method_name  }}</option>
                                         @endforeach

@@ -15,14 +15,13 @@ return new class extends Migration
     {
         Schema::create('transfers', function (Blueprint $table) {
             $table->id();
-            $table->string('from')->nullable();
-            $table->string('to')->nullable();
+            $table->string('account_id')->nullable();
             $table->date('date');
             $table->string('description')->nullable();
             $table->string('currency')->nullable();
             $table->string('amount')->nullable();
             $table->string('tags')->nullable();
-            $table->string('method')->nullable();
+            $table->string('payment_method_name')->nullable();
             $table->string('ref')->nullable();;
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();

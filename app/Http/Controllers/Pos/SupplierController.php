@@ -24,9 +24,27 @@ class SupplierController extends Controller
     public function SupplierStore(Request $request){
         Supplier::insert([
             'name' => $request->name,
+            'code' => $request->code,
+            'display_name' => $request->display_name,
+            'company' => $request->company,
+            'business_num' => $request->business_num,
             'mobile_no' => $request->mobile_no,
-            'email' => $request->email,
+            'type' => $request->type,
+
             'address' => $request->address,
+            'email' => $request->email,
+            'city' => $request->city,
+            'state' => $request->state,
+            'zip' => $request->zip,
+            'country' => $request->country,
+            'currency' => $request->currency,
+            'group' => $request->group,
+            'owner' => $request->owner,
+            'username' => $request->username,
+            'password' => $request->password,
+            'confirm_password' => $request->confirm_password,
+
+        
             'created_by' =>Auth::user()->id,
             'created_at' =>Carbon::now(),
         ]);
@@ -46,9 +64,26 @@ class SupplierController extends Controller
 
         Supplier::findOrFail($supplier_id)->update([
             'name' => $request->name,
+            'code' => $request->code,
+            'display_name' => $request->display_name,
+            'company' => $request->company,
+            'business_num' => $request->business_num,
             'mobile_no' => $request->mobile_no,
-            'email' => $request->email,
+            'type' => $request->type,
+
             'address' => $request->address,
+            'email' => $request->email,
+            'city' => $request->city,
+            'state' => $request->state,
+            'zip' => $request->zip,
+            'country' => $request->country,
+            'currency' => $request->currency,
+            'group' => $request->group,
+            'owner' => $request->owner,
+            'username' => $request->username,
+            'password' => $request->password,
+            'confirm_password' => $request->confirm_password,
+            
             'updated_by' =>Auth::user()->id,
             'updated_at' =>Carbon::now(),
         ]);

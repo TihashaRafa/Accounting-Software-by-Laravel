@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Transfer;
 use Auth;
+use App\Models\Account;
+use App\Models\PaymentMethod;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
 
 
@@ -11,20 +14,28 @@ class TransferController extends Controller
 {
     public function TransferAll(){
 
-        $transfer = Transfer::all();
-        return view('backend.transfer.transfer_all', compact('transfer'));
-    } // end method
+        $transfer = Transfer::select('transfers.*', 'accounts.*', 'payment_methods.*')
+        ->with(['account', 'PaymentMethod'])
+        ->join('accounts', 'accounts.id', '=', 'transfers.account_id')
+        ->join('payment_methods', 'payment_methods.id', '=', 'transfers.payment_method_name')
+        ->get();
+ $account = Account::all();
+ $PaymentMethod = PaymentMethod::all();
+ return view('backend.transfer.transfer_all', compact('transfer','account', 'PaymentMethod' ));
+} // end method
+
+
 
     public function TransferStore(Request $request){
         Transfer::insert([
-            'from' => $request->from,
-            'to' => $request->to,
+            'account_id' => $request->account_id,
+            'account_id' => $request->account_id,
             'date' => $request->date,
             'description' => $request->description,
             'currency' => $request->currency,
             'amount' => $request->amount,
             'tags' => $request->tags,
-            'method' => $request->method,
+            'payment_method_name' => $request->payment_method_name,
             'ref' => $request->ref,
 
             'created_by' =>Auth::user()->id,

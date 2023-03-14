@@ -23,39 +23,26 @@
                         <form method ="post" action= "{{ route('transfer.store') }}" id="myForm" enctype="multipart/form-data">
                                             @csrf 
 
-                         <div class="row mb-3">
-                            <label for="example-text-input" class="col-sm-2 col-from-label">From</label>
-                                <select id="from" name="from" class="form-control select2-hidden-accessible">
-                                    <option>Choose an Account</option>
-                                    <option>bKash Merchant</option>
-                                    <option>City Bank</option>
-                                    <option>Nagad Merchant</option>
-                                    <option>aamarPay</option>
-                                    <option>(Publicia) bKash Personal</option>
-                                    <option>(Publicia) Nagad Personal</option>
-                                    <option>(Publicia) Brac Bank</option>
-                                    <option>Cash</option>
-                                    <option>PayPal (business@limda.net)</option>
-                                </select>
-                        
-                            </div>
+                                <div class="row mb-3">
+                                    <label for="example-text-input" class="col-sm-2 col-from-label">From</label>
+                                    <select name="account_id">
+                                    <option>Choose an option</option>
+                                        @foreach ($account as $acc)
+                                        <option value="{{ $acc->id }}">{{ $acc->account_id }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
 
-                            <div class="row mb-3">
-                            <label for="example-text-input" class="col-sm-2 col-from-label">To</label>
-                                <select id="to" name="to" class="form-control select2-hidden-accessible">
-                                    <option>Choose an Account</option>
-                                    <option>bKash Merchant</option>
-                                    <option>City Bank</option>
-                                    <option>Nagad Merchant</option>
-                                    <option>aamarPay</option>
-                                    <option>(Publicia) bKash Personal</option>
-                                    <option>(Publicia) Nagad Personal</option>
-                                    <option>(Publicia) Brac Bank</option>
-                                    <option>Cash</option>
-                                    <option>PayPal (business@limda.net)</option>
-                                </select>
-                        
-                            </div>
+                                <div class="row mb-3">
+                                    <label for="example-text-input" class="col-sm-2 col-from-label">To</label>
+                                    <select name="account_id">
+                                    <option>Choose an option</option>
+                                        @foreach ($account as $acc)
+                                        <option value="{{ $acc->id }}">{{ $acc->account_id }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
 
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-from-label">Date</label>    
@@ -87,26 +74,15 @@
                                      <input type="text" name="tags"  class="form-control select2-hidden-accessible" value="" >
                             </div>
 
-                           
-                                    <div class="row mb-3"> 
-                                     <label for="example-text-input" class="col-sm-2 col-from-label">Method</label>
-                                         <select id="method" name="method" class="form-control select2-hidden-accessible">
-                                        <option value="" data-select2-id="8">Select Payment Method</option>
-                                        <option value="Cash">Cash</option>
-                                        <option value="Check">Check</option>
-                                        <option value="Credit Card">Credit Card</option>
-                                        <option value="Debit">Debit</option>
-                                        <option value="Electronic Transfer">Electronic Transfer</option>
-                                        <option value="Paypal">Paypal</option>
-                                        <option value="ATM Withdrawals">ATM Withdrawals</option>
-                                        <option value="bKash Merchant">bKash Merchant</option>
-                                        <option value="Nagad Merchant">Nagad Merchant</option>
-                                        <option value="City Bank (Limda Host)">City Bank (Limda Host)</option>
-                                        <option value="Brac Bank (CITBD)">Brac Bank (CITBD)</option>
-                                        <option value="City Bank (Optimus Technologies)">City Bank (Optimus Technologies)</option>
-                                        <option value="aamarPay">aamarPay</option>
+                            <div class="row mb-3">
+                                    <label for="example-text-input" class="col-sm-2 col-from-label">Method</label>
+                                    <select id="method" name="payment_method_name" class="form-control select2-hidden-accessible">
+                                    <option>Choose an option</option>
+                                    @foreach ($PaymentMethod as $met)
+                                        <option value="{{ $met->id }}">{{ $met->payment_method_name  }}</option>
+                                        @endforeach
                                     </select>
-                                    </div>
+                                </div>
 
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-from-label">Ref#</label>    
@@ -151,12 +127,12 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($transfer as $key =>$items)
+                                @foreach($transfer as $items)
 
                                     <tr>
 
-                                        <td class="h6">{{ $items->from }} </td>
-                                        <td class="h6 text-info"><a href="https://portal.optimus.com.bd/?ng=transactions/manage/83/">
+                                        <td class="h6">{{ $items->account_id }} </td>
+                                        <td class="h6 text-info"><a href="#">
                                            <span class="text-info"> {{ $items->description }} </span></a>  <br>
                                          <br>
                                       

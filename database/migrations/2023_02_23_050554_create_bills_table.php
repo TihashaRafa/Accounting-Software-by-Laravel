@@ -20,9 +20,9 @@ return new class extends Migration
             $table->string('repeat')->nullable();
             $table->string('currency')->nullable();
             $table->string('amount')->nullable();
-            $table->string('account')->nullable();
-            $table->string('payee')->nullable();
-            $table->string('catagory')->nullable();;
+            $table->string('account_id')->nullable();
+            $table->string('payer_name')->nullable();
+            $table->string('catagory_name')->nullable();;
             $table->string('website')->nullable();;
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();

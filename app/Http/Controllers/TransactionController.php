@@ -9,11 +9,44 @@ use Illuminate\Support\Carbon;
 
 class TransactionController extends Controller
 {
-    public function TransactionAll(){
+        public function TransactionAll(Request $request)
+        {
+            // $query = Transaction::query();
+            // $data = $request->input('data_filter');
+            // if ($data) {
+            //     switch ($data) {
+            //         case 'today':
+            //             $query->whereDate('created_at', Carbon::today());
+            //             break;
+            //         case 'yesterday':
+            //             $query->whereDate('created_at', Carbon::yesterday());
+            //             break;
+            //         case 'this_week':
+            //             $query->whereBetween('created_at', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()]);
+            //             break;
+            //         case 'last_week':
+            //             $query->whereBetween('created_at', [Carbon::now()->subWeek()->startOfWeek(), Carbon::now()->subWeek()->endOfWeek()]);
+            //             break;
+            //         case 'this_month':
+            //             $query->whereMonth('created_at', Carbon::now()->month);
+            //             break;
+            //         case 'last_month':
+            //             $query->whereMonth('created_at', Carbon::now()->subMonth()->month);
+            //             break;
+            //         case 'this_year':
+            //             $query->whereYear('created_at', Carbon::now()->year);
+            //             break;
+            //         case 'last_year':
+            //             $query->whereYear('created_at', Carbon::now()->subYear()->year);
+            //             break;
+            //     }
+            // }
+        
+            // $transactions = $query->get();
+            $transaction = Transaction::all();
+            return view('backend.transaction.transaction_all', compact('transaction'));
+        } //end method
 
-        $transaction = Transaction::all();
-        return view('backend.transaction.transaction_all', compact('transaction'));
-    } // end method
 
     public function TransactionUnclear(){
 
