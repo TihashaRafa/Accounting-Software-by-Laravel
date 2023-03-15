@@ -5,16 +5,27 @@ namespace App\Http\Controllers\Pos;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Supplier;
+use App\Models\Owner;
+use App\Models\Company;
 use Auth;
 use Illuminate\Support\Carbon;
 
 class SupplierController extends Controller
 {
     public function SupplierAll(){
-        $suppliers = Supplier::all();
+
+        $suppliers = Supplier::select('suppliers.*','companies.*','owners.*')
+               ->with(['suppliers', 'company', 'owner'])
+               ->join('companies', 'companies.id', '=', 'suppliers.company_name')
+               ->join('owners', 'owners.id', '=', 'suppliers.owner_name')
+               ->get();
+
+            $owner = Owner::all();
+            $company = Company::all();
+        // $suppliers = Supplier::all();
         // $suppliers = Supplier::latest()->get();
 
-        return view('backend.supplier.supplier_all', compact('suppliers'));
+        return view('backend.supplier.supplier_all', compact('suppliers','owner','company'));
     } // end method
 
     public function SupplierAdd(){
@@ -26,7 +37,7 @@ class SupplierController extends Controller
             'name' => $request->name,
             'code' => $request->code,
             'display_name' => $request->display_name,
-            'company' => $request->company,
+            'company_name' => $request->company_name,
             'business_num' => $request->business_num,
             'mobile_no' => $request->mobile_no,
             'type' => $request->type,
@@ -39,7 +50,7 @@ class SupplierController extends Controller
             'country' => $request->country,
             'currency' => $request->currency,
             'group' => $request->group,
-            'owner' => $request->owner,
+            'owner_name' => $request->owner_name,
             'username' => $request->username,
             'password' => $request->password,
             'confirm_password' => $request->confirm_password,
@@ -66,7 +77,7 @@ class SupplierController extends Controller
             'name' => $request->name,
             'code' => $request->code,
             'display_name' => $request->display_name,
-            'company' => $request->company,
+            'company_name' => $request->company_name,
             'business_num' => $request->business_num,
             'mobile_no' => $request->mobile_no,
             'type' => $request->type,
@@ -79,7 +90,7 @@ class SupplierController extends Controller
             'country' => $request->country,
             'currency' => $request->currency,
             'group' => $request->group,
-            'owner' => $request->owner,
+            'owner_name' => $request->owner_name,
             'username' => $request->username,
             'password' => $request->password,
             'confirm_password' => $request->confirm_password,

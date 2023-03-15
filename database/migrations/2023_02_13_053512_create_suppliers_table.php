@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->string('code')->nullable();
             $table->string('display_name')->nullable();
-            $table->string('company')->nullable();
+            $table->string('company_name')->nullable();
             $table->string('business_num')->nullable();
             $table->string('mobile_no')->nullable();
             $table->string('type')->nullable();
@@ -31,7 +31,7 @@ return new class extends Migration
             $table->string('country')->nullable();
             $table->string('currency')->nullable();
             $table->string('group')->nullable();
-            $table->string('owner')->nullable();
+            $table->string('owner_name')->nullable();
             $table->string('username')->nullable();
             $table->string('password')->nullable();
             $table->string('confirm_password')->nullable();

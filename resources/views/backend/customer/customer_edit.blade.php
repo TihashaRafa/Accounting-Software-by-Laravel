@@ -55,35 +55,19 @@
                                                 <input type="text" id="display_name" name="display_name" value="{{ $customer->display_name }}" class="form-control">
                                             </div>
                                         </div>
+										@php
+                                        $company = App\Models\Company::all();
+                                        $owner = App\Models\Owner::all();
+                                        @endphp
 
 
-                                        <div class="mb-3 row">
-                                            <label for="cid" class="col-sm-3"><span class="h6">Company</span> </label>
-                                            <div class="col-sm-9">
-                                                <select id="cid" name="company" value="{{ $customer->company }}" class="form-control select2-hidden-accessible" data-select2-id="cid" tabindex="-1" aria-hidden="true">
-                                                    <option value="0" data-select2-id="2">None</option>
-                                                   <option value="8">Kloud Technologies</option>
-                                                                                                            <option value="7">
-                                                            AmarStationery
-                                                        </option>
-                                                                                                            <option value="6">
-                                                            Hexagon Bdtech Limited
-                                                        </option>
-                                                                                                            <option value="5">
-                                                            Health Point BD
-                                                        </option>
-                                                                                                            <option value="3">
-                                                            Limda Host
-                                                        </option>
-                                                                                                            <option value="2">
-                                                            SoftifyBD Ltd
-                                                        </option>
-                                                                                                            <option value="1">
-                                                            Optimus Technologies
-                                                        </option>
-                                                                                                    </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="1" style="width: 571.5px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-cid-container"><span class="select2-selection__rendered" id="select2-cid-container" role="textbox" aria-readonly="true" title="None">None</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
-                                            </div>
-                                        </div>
+                                        <div class="row mb-3">
+                                    <label for="example-text-input" class="col-sm-2 col-from-label">company</label>
+                                    <select name="company_name">
+                                        @foreach ($company as $com)
+                                        <option value="{{ $com->id }}">{{ $com->company_name  }}</option>
+                                        @endforeach
+                                    </select>
                                 
 
                                                                                     <div class="mb-3 row">
@@ -464,16 +448,14 @@
                                             </div>
                                         </div>
 
-                                        <div class="mb-3 row">
-                                            <label for="owner_id" class="col-sm-3"><span class="h6">Owner</span> </label>
-                                            <div class="col-sm-9">
-
-                                                <select class="form-control" name="owner" value="{{ $customer->owner }}"  id="owner_id">
-                                                                                                            <option value="1" selected="">Junaid Miaje</option>
-                                                                                                            <option value="6">Tiasha Rafa</option>
-                                                                                                    </select>
-                                            </div>
-                                        </div>
+										<div class="row mb-3">
+                                    <label for="example-text-input" class="col-sm-2 col-from-label">Owner</label>
+                                    <select name="owner_name">
+                                        @foreach ($owner as $own)
+                                        <option value="{{ $own->id }}">{{ $own->owner_name  }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
 
                                             <div class="mb-3 row">
                                                 <label for="zip" class="col-sm-3"><span class="h6">Username </span></label>

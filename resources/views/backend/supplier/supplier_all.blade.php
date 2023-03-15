@@ -19,10 +19,10 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($suppliers as $key =>$items)
+                                @foreach($suppliers as $items)
 
                                 <tr>
-                                    <td>{{ $key+1 }}</td>
+                                    <td>{{ $items->id }}</td>
                                     <td>{{ $items->name }}</td>
                                     <td>{{ $items->mobile_no }}</td>
                                     <td>{{ $items->email }}</td>

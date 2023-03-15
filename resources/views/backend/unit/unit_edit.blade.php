@@ -9,17 +9,17 @@
         <div class="widget-1 col-md-6 col-sm-12">
             <div class="panel">
                 <div class="panel-hdr">
-                    <h2 class="panel-title">owner Payer</h2>
+                    <h2 class="panel-title">Edit Unit</h2>
                 </div>
                 <div class="panel-container">
                     <div class="panel-content">
-                    <form method="post" action="{{ route('owner.update') }}" id="myForm" enctype="multipart/form-data">
+                    <form method="post" action="{{ route('unit.update') }}" id="myForm" enctype="multipart/form-data">
                                 @csrf
-                         <input type="hidden" name="id" value="{{ $owner->id }}" >
+                         <input type="hidden" name="id" value="{{ $unit->id }}" >
                             <div class="mb-3">
                                 <label for="name">Name</label>
 
-                                <input type="text" class="form-control" id="name" name="owner_name" value="{{ $owner-> owner_name  }}">
+                                <input type="text" class="form-control" id="name" name="unit_name" value="{{ $unit-> unit_name  }}">
                             </div>
 
                             <button type="submit" class="btn btn-primary waves-effect waves-themed">Submit</button>

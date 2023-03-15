@@ -27,6 +27,7 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PaymentMethodController;
 use App\Http\Controllers\PayerController;
 use App\Http\Controllers\OwnerController;
+use App\Http\Controllers\UnitController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PurchaseController;
@@ -288,6 +289,14 @@ Route::controller(OwnerController::class)->group(function(){
     Route::post('/owner/delete/{id}', 'OwnerDelete')->name('owner.delete');  
 });
 
+//Unit All 
+Route::controller(UnitController::class)->group(function(){
+    Route::get('/unit/all', 'UnitAll')->name('unit.all');
+    Route::post('/unit/store', 'UnitStore')->name('unit.store');
+    Route::get('/unit/edit/{id}', 'UnitEdit')->name('unit.edit');
+    Route::post('/unit/update', 'UnitUpdate')->name('unit.update');
+    Route::post('/unit/delete/{id}', 'UnitDelete')->name('unit.delete');  
+});
 
 
 // invoice All 

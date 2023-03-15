@@ -9,4 +9,19 @@ class Customer extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
+
+    public function owner()
+    {
+        return $this->belongsTo(Owner::class);
+    }
+
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class);
+    }
 }

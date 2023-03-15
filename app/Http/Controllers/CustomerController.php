@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Customer;
+use App\Models\Owner;
+use App\Models\Company;
 use Auth;
 use Illuminate\Support\Carbon;
 
@@ -11,8 +13,16 @@ class CustomerController extends Controller
 {
     public function customerAll(){
 
-        $customer = Customer::all();
-        return view('backend.customer.customer_all', compact('customer'));
+        $customer = Customer::select('customers.*','companies.*','owners.*')
+               ->with(['customer', 'company', 'owner'])
+               ->join('companies', 'companies.id', '=', 'customers.company_name')
+               ->join('owners', 'owners.id', '=', 'customers.owner_name')
+               ->get();
+
+
+        $owner = Owner::all();
+        $company = Company::all();
+        return view('backend.customer.customer_all', compact('customer', 'owner', 'company'));
     } // end method
 
     public function customerAdd(){
@@ -25,7 +35,7 @@ public function CustomerStore(Request $request){
             'name' => $request->name,
             'code' => $request->code,
             'display_name' => $request->display_name,
-            'company' => $request->company,
+            'company_name' => $request->company_name,
             'business_number' => $request->business_number,
             'type' => $request->type,
             'city' => $request->city,
@@ -37,7 +47,7 @@ public function CustomerStore(Request $request){
             'phone' => $request->phone,
             'currency' => $request->currency,
             'group' => $request->group,
-            'owner' => $request->owner,
+            'owner_name' => $request->owner_name,
             'username' => $request->username,
             'password' => $request->password,
             'confirm_password' => $request->confirm_password,
@@ -63,7 +73,7 @@ public function CustomerStore(Request $request){
             'name' => $request->name,
             'code' => $request->code,
             'display_name' => $request->display_name,
-            'company' => $request->company,
+            'company_name' => $request->company_name,
             'business_number' => $request->business_number,
             'type' => $request->type,
             'city' => $request->city,
@@ -75,7 +85,7 @@ public function CustomerStore(Request $request){
             'phone' => $request->phone,
             'currency' => $request->currency,
             'group' => $request->group,
-            'owner' => $request->owner,
+            'owner_name' => $request->owner_name,
             'username' => $request->username,
             'password' => $request->password,
             'confirm_password' => $request->confirm_password,

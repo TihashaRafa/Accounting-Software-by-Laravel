@@ -34,10 +34,10 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach($customer as $key =>$items)
+                                                @foreach($customer as $items)
 
                                                 <tr>
-                                                    <td>{{ $key+1 }}</td>
+                                                    <td>{{ $items->id }}</td>
                                                     <td>{{ $items->name }}</td>
                                                     <td>{{ $items->email }}</td>
                                                     <td>{{ $items->phone }}</td>                                    
